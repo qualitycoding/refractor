@@ -1,0 +1,5 @@
+build*/
+.fc/
+pluginval-logs/
+*.user
+scratch/
