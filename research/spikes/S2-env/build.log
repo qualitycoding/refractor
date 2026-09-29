@@ -1,9 +1,282 @@
--- The C compiler identification is GNU 13.3.0
+[0/2] Re-checking globbed directories...
+[1/197] Building CXX object CMakeFiles/refractor_dsp.dir/src/dsp/Params.cpp.o
+[2/197] Building CXX object CMakeFiles/refractor_dsp.dir/src/dsp/Mapping.cpp.o
+[3/197] Building CXX object CMakeFiles/refractor_dsp.dir/src/dsp/PitchShifter.cpp.o
+[4/197] Building CXX object CMakeFiles/refractor_dsp.dir/src/dsp/ClockDomain.cpp.o
+[5/197] Building CXX object CMakeFiles/refractor_dsp.dir/src/dsp/DualModeSwitch.cpp.o
+[6/197] Building CXX object CMakeFiles/refractor_dsp.dir/src/dsp/Engine.cpp.o
+[7/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/catch_chronometer.cpp.o
+[8/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/catch_benchmark.cpp.o
+[9/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_analyse.cpp.o
+[10/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_benchmark_function.cpp.o
+[11/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_run_for_at_least.cpp.o
+[12/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generator_exception.cpp.o
+[13/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_stats.cpp.o
+[14/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators.cpp.o
+[15/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators_random.cpp.o
+[16/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators_throw.cpp.o
+[17/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_automake.cpp.o
+[18/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_common_base.cpp.o
+[19/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_compact.cpp.o
+[20/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_console.cpp.o
+[21/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_event_listener.cpp.o
+[22/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_cumulative_base.cpp.o
+[23/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_helpers.cpp.o
+[24/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_json.cpp.o
+[25/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_junit.cpp.o
+[26/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_registrars.cpp.o
+[27/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_multi.cpp.o
+[28/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_streaming_base.cpp.o
+[29/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_sonarqube.cpp.o
+[30/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_tap.cpp.o
+[31/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_teamcity.cpp.o
+[32/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_capture.cpp.o
+[33/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_config.cpp.o
+[34/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_xml.cpp.o
+[35/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_exception.cpp.o
+[36/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_registry_hub.cpp.o
+[37/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_generatortracker.cpp.o
+[38/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter_factory.cpp.o
+[39/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_testcase.cpp.o
+[40/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter.cpp.o
+[41/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_assertion_result.cpp.o
+[42/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_approx.cpp.o
+[43/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_get_random_seed.cpp.o
+[44/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_config.cpp.o
+[45/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_message.cpp.o
+[46/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_registry_hub.cpp.o
+[47/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_tag_alias_autoregistrar.cpp.o
+[48/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_case_info.cpp.o
+[49/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_session.cpp.o
+[50/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_spec.cpp.o
+[51/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_timer.cpp.o
+[52/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_totals.cpp.o
+[53/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_translate_exception.cpp.o
+[54/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_tostring.cpp.o
+[55/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_version.cpp.o
+[56/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_case_insensitive_comparisons.cpp.o
+[57/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_assertion_handler.cpp.o
+[58/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_clara.cpp.o
+[59/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_console_colour.cpp.o
+[60/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_context.cpp.o
+[61/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debug_console.cpp.o
+[62/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debugger.cpp.o
+[63/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_commandline.cpp.o
+[64/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_decomposer.cpp.o
+[65/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enforce.cpp.o
+[66/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_errno_guard.cpp.o
+[67/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enum_info.cpp.o
+[68/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_exception_translator_registry.cpp.o
+[69/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_floating_point_helpers.cpp.o
+[70/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_getenv.cpp.o
+[71/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_fatal_condition_handler.cpp.o
+[72/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_istream.cpp.o
+[73/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_jsonwriter.cpp.o
+[74/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_leak_detector.cpp.o
+[75/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_lazy_expr.cpp.o
+[76/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_message_info.cpp.o
+[77/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_output_redirect.cpp.o
+[78/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_parse_numbers.cpp.o
+[79/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_list.cpp.o
+[80/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_number_generator.cpp.o
+[81/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_polyfills.cpp.o
+[82/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_seed_generation.cpp.o
+[83/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_registry.cpp.o
+[84/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_spec_parser.cpp.o
+[85/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reusable_string_stream.cpp.o
+[86/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_section.cpp.o
+[87/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_singletons.cpp.o
+[88/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_source_line_info.cpp.o
+[89/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_startup_exception_registry.cpp.o
+[90/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stdstreams.cpp.o
+[91/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_run_context.cpp.o
+[92/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_string_manip.cpp.o
+[93/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stringref.cpp.o
+[94/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_info_hasher.cpp.o
+[95/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_tag_alias_registry.cpp.o
+[96/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_tracker.cpp.o
+[97/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_failure_exception.cpp.o
+[98/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_registry.cpp.o
+[99/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_registry_impl.cpp.o
+[100/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_spec_parser.cpp.o
+[101/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_uncaught_exceptions.cpp.o
+[102/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_textflow.cpp.o
+[103/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_wildcard_pattern.cpp.o
+[104/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_xmlwriter.cpp.o
+[105/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers.cpp.o
+[106/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_container_properties.cpp.o
+[107/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_exception.cpp.o
+[108/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_floating_point.cpp.o
+[109/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_predicate.cpp.o
+[110/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_quantifiers.cpp.o
+[111/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_templated.cpp.o
+[112/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/internal/catch_matchers_impl.cpp.o
+[113/197] Linking CXX static library librefractor_dsp.a
+[114/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_string.cpp.o
+[115/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_audio_processors/juce_audio_processors.cpp.o
+[116/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_gui_extra/juce_gui_extra.cpp.o
+[117/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics_2.cpp.o
+[118/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics.cpp.o
+In file included from /home/claude/fc/juce-src/modules/juce_core/system/juce_StandardHeader.h:108,
+                 from /home/claude/fc/juce-src/modules/juce_core/juce_core.h:215,
+                 from /home/claude/fc/juce-src/modules/juce_graphics/juce_graphics.h:67,
+                 from /home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics.h:68,
+                 from /home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics.cpp:55:
+/home/claude/fc/juce-src/modules/juce_core/system/juce_PlatformDefs.h:292:38: note: ‘#pragma message: This version of JUCE does not use the splash screen, the flag JUCE_DISPLAY_SPLASH_SCREEN is ignored’
+  292 |  #define JUCE_COMPILER_WARNING(msg)  _Pragma (JUCE_STRINGIFY (message (msg)))
+      |                                      ^~~~~~~
+/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics.cpp:61:2: note: in expansion of macro ‘JUCE_COMPILER_WARNING’
+   61 |  JUCE_COMPILER_WARNING ("This version of JUCE does not use the splash screen, the flag JUCE_DISPLAY_SPLASH_SCREEN is ignored")
+      |  ^~~~~~~~~~~~~~~~~~~~~
+[119/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics_3.cpp.o
+[120/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics_4.cpp.o
+[121/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics_5.cpp.o
+[122/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_graphics/juce_graphics.cpp.o
+[123/197] Building C object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_graphics/juce_graphics_Sheenbidi.c.o
+[124/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_events/juce_events.cpp.o
+[125/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o
+[126/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_core/juce_core_CompilationTime.cpp.o
+[127/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_core/juce_core.cpp.o
+[128/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_data_structures/juce_data_structures.cpp.o
+[129/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_audio_processors_headless/juce_audio_processors_headless_ara.cpp.o
+[130/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_audio_processors_headless/juce_audio_processors_headless_lv2_libs.cpp.o
+[131/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_audio_basics/juce_audio_basics.cpp.o
+[132/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_audio_processors_headless/juce_audio_processors_headless.cpp.o
+[133/197] Building CXX object CMakeFiles/Refractor.dir/src/plugin/PluginProcessor.cpp.o
+In file included from /home/claude/fc/juce-src/modules/juce_audio_processors_headless/juce_audio_processors_headless.h:145,
+                 from /home/claude/fc/juce-src/modules/juce_audio_processors/juce_audio_processors.h:64,
+                 from /home/claude/refractor/src/plugin/PluginProcessor.h:2,
+                 from /home/claude/refractor/src/plugin/PluginProcessor.cpp:1:
+/home/claude/fc/juce-src/modules/juce_audio_processors_headless/processors/juce_AudioProcessor.h:292:18: warning: ‘virtual void juce::AudioProcessor::processBlock(juce::AudioBuffer<double>&, juce::MidiBuffer&)’ was hidden [-Woverloaded-virtual=]
+  292 |     virtual void processBlock (AudioBuffer<double>& buffer,
+      |                  ^~~~~~~~~~~~
+/home/claude/refractor/src/plugin/PluginProcessor.h:15:8: note:   by ‘virtual void refractor::RefractorProcessor::processBlock(juce::AudioBuffer<float>&, juce::MidiBuffer&)’
+   15 |   void processBlock(juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
+      |        ^~~~~~~~~~~~
+[134/197] Building CXX object CMakeFiles/Refractor.dir/src/plugin/PluginEditor.cpp.o
+In file included from /home/claude/fc/juce-src/modules/juce_audio_processors_headless/juce_audio_processors_headless.h:145,
+                 from /home/claude/fc/juce-src/modules/juce_audio_processors/juce_audio_processors.h:64,
+                 from /home/claude/refractor/src/plugin/PluginEditor.h:2,
+                 from /home/claude/refractor/src/plugin/PluginEditor.cpp:1:
+/home/claude/fc/juce-src/modules/juce_audio_processors_headless/processors/juce_AudioProcessor.h:292:18: warning: ‘virtual void juce::AudioProcessor::processBlock(juce::AudioBuffer<double>&, juce::MidiBuffer&)’ was hidden [-Woverloaded-virtual=]
+  292 |     virtual void processBlock (AudioBuffer<double>& buffer,
+      |                  ^~~~~~~~~~~~
+In file included from /home/claude/refractor/src/plugin/PluginEditor.cpp:2:
+/home/claude/refractor/src/plugin/PluginProcessor.h:15:8: note:   by ‘virtual void refractor::RefractorProcessor::processBlock(juce::AudioBuffer<float>&, juce::MidiBuffer&)’
+   15 |   void processBlock(juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
+      |        ^~~~~~~~~~~~
+[135/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_audio_utils/juce_audio_utils.cpp.o
+[136/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_audio_formats/juce_audio_formats.cpp.o
+[137/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_dsp/juce_dsp.cpp.o
+[138/197] Building VST3 manifest helper for Refractor
 -- The CXX compiler identification is GNU 13.3.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
-bld=0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/claude/build-full/vst3_helpers/Refractor
+[1/2] Building CXX object CMakeFiles/vst3_helper.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/VST3/juce_VST3ManifestHelper.cpp.o
+[2/2] Linking CXX executable vst3_helper
+[139/197] Linking CXX static library /home/claude/fc/catch2-build/src/libCatch2.a
+[140/197] Building CXX object CMakeFiles/Refractor.dir/home/claude/fc/juce-src/modules/juce_audio_devices/juce_audio_devices.cpp.o
+[141/197] Linking CXX static library Refractor_artefacts/Release/libRefractor_SharedCode.a
+[142/197] Building CXX object CMakeFiles/Refractor_Standalone.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.cpp.o
+[143/197] Building CXX object CMakeFiles/Refractor_Standalone.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o
+[144/197] Building CXX object CMakeFiles/Refractor_Standalone.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o
+[145/197] Building CXX object CMakeFiles/Refractor_Standalone.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.cpp.o
+[146/197] Building CXX object /home/claude/fc/catch2-build/src/CMakeFiles/Catch2WithMain.dir/catch2/internal/catch_main.cpp.o
+[147/197] Building CXX object CMakeFiles/Refractor_Standalone.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o
+[148/197] Building CXX object CMakeFiles/Refractor_Standalone.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.cpp.o
+[149/197] Building CXX object CMakeFiles/Refractor_Standalone.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.cpp.o
+[150/197] Building CXX object CMakeFiles/Refractor_VST3.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX.cpp.o
+[151/197] Building CXX object CMakeFiles/Refractor_VST3.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_AAX_utils.cpp.o
+[152/197] Building CXX object CMakeFiles/Refractor_VST3.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_ARA.cpp.o
+[153/197] Building CXX object CMakeFiles/Refractor_VST3.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_LV2.cpp.o
+[154/197] Building CXX object CMakeFiles/Refractor_VST3.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o
+[155/197] Building CXX object CMakeFiles/Refractor_VST3.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_Unity.cpp.o
+[156/197] Building CXX object CMakeFiles/Refractor_VST3.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST2.cpp.o
+[157/197] Building CXX object CMakeFiles/Refractor_Standalone.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp.o
+[158/197] Linking CXX static library /home/claude/fc/catch2-build/src/libCatch2Main.a
+[159/197] Building CXX object tests/CMakeFiles/refractor_dsp_tests.dir/dsp/test_params_mapping.cpp.o
+In file included from /home/claude/fc/catch2-src/src/catch2/../catch2/matchers/catch_matchers.hpp:11,
+                 from /home/claude/fc/catch2-src/src/catch2/../catch2/matchers/catch_matchers_floating_point.hpp:11,
+                 from /home/claude/refractor/tests/dsp/test_params_mapping.cpp:3:
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp: In function ‘void CATCH2_INTERNAL_TEST_8()’:
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:63:54: warning: ISO C++ says that these are ambiguous, even though the worst conversion for the first is better than the worst conversion for the second:
+   63 |   CHECK_THAT(mapping::toneToCutoffHz(0.0f), WithinRel(calib::kToneMinCutoffHz, 1e-6));
+      |                                             ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/claude/fc/catch2-src/src/catch2/../catch2/matchers/internal/catch_matchers_impl.hpp:79:74: note: in definition of macro ‘INTERNAL_CHECK_THAT’
+   79 |             catchAssertionHandler.handleExpr( Catch::makeMatchExpr( arg, matcher ) ); \
+      |                                                                          ^~~~~~~
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:63:3: note: in expansion of macro ‘CHECK_THAT’
+   63 |   CHECK_THAT(mapping::toneToCutoffHz(0.0f), WithinRel(calib::kToneMinCutoffHz, 1e-6));
+      |   ^~~~~~~~~~
+/home/claude/fc/catch2-src/src/catch2/../catch2/matchers/catch_matchers_floating_point.hpp:72:22: note: candidate 1: ‘Catch::Matchers::WithinRelMatcher Catch::Matchers::WithinRel(double, double)’
+   72 |     WithinRelMatcher WithinRel(double target, double eps);
+      |                      ^~~~~~~~~
+/home/claude/fc/catch2-src/src/catch2/../catch2/matchers/catch_matchers_floating_point.hpp:76:22: note: candidate 2: ‘Catch::Matchers::WithinRelMatcher Catch::Matchers::WithinRel(float, float)’
+   76 |     WithinRelMatcher WithinRel(float target, float eps);
+      |                      ^~~~~~~~~
+[160/197] Building CXX object tests/CMakeFiles/refractor_dsp_tests.dir/dsp/test_dualmode_switch.cpp.o
+[161/197] Building CXX object tests/CMakeFiles/refractor_dsp_tests.dir/dsp/test_engine_audio.cpp.o
+[162/197] Building CXX object CMakeFiles/Refractor_VST3.dir/home/claude/fc/juce-src/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.cpp.o
+[163/197] Building CXX object tests/CMakeFiles/refractor_rt_tests.dir/dsp/test_realtime_alloc.cpp.o
+[164/197] Building CXX object tests/CMakeFiles/refractor_dsp_tests.dir/dsp/test_engine_operational.cpp.o
+[0/2] Re-checking globbed directories...
+[1/34] Building VST3 manifest helper for Refractor
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/claude/build-full/vst3_helpers/Refractor
+ninja: no work to do.
+[2/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/__/src/plugin/PluginProcessor.cpp.o
+[3/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/plugin/test_plugin.cpp.o
+[4/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/__/src/plugin/PluginEditor.cpp.o
+[5/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_audio_utils/juce_audio_utils.cpp.o
+[6/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_audio_processors/juce_audio_processors.cpp.o
+[7/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_gui_extra/juce_gui_extra.cpp.o
+[8/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics_2.cpp.o
+[9/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics.cpp.o
+In file included from /home/claude/fc/juce-src/modules/juce_core/system/juce_StandardHeader.h:108,
+                 from /home/claude/fc/juce-src/modules/juce_core/juce_core.h:215,
+                 from /home/claude/fc/juce-src/modules/juce_graphics/juce_graphics.h:67,
+                 from /home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics.h:68,
+                 from /home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics.cpp:55:
+/home/claude/fc/juce-src/modules/juce_core/system/juce_PlatformDefs.h:292:38: note: ‘#pragma message: This version of JUCE does not use the splash screen, the flag JUCE_DISPLAY_SPLASH_SCREEN is ignored’
+  292 |  #define JUCE_COMPILER_WARNING(msg)  _Pragma (JUCE_STRINGIFY (message (msg)))
+      |                                      ^~~~~~~
+/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics.cpp:61:2: note: in expansion of macro ‘JUCE_COMPILER_WARNING’
+   61 |  JUCE_COMPILER_WARNING ("This version of JUCE does not use the splash screen, the flag JUCE_DISPLAY_SPLASH_SCREEN is ignored")
+      |  ^~~~~~~~~~~~~~~~~~~~~
+[10/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics_4.cpp.o
+[11/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics_3.cpp.o
+[12/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_gui_basics/juce_gui_basics_5.cpp.o
+[13/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_graphics/juce_graphics.cpp.o
+[14/34] Building C object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_graphics/juce_graphics_Sheenbidi.c.o
+[15/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o
+[16/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_events/juce_events.cpp.o
+[17/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_core/juce_core_CompilationTime.cpp.o
+[18/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_data_structures/juce_data_structures.cpp.o
+[19/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_audio_processors_headless/juce_audio_processors_headless.cpp.o
+[20/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_audio_processors_headless/juce_audio_processors_headless_ara.cpp.o
+[21/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_audio_processors_headless/juce_audio_processors_headless_lv2_libs.cpp.o
+[22/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_core/juce_core.cpp.o
+[23/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_audio_basics/juce_audio_basics.cpp.o
+[24/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_audio_devices/juce_audio_devices.cpp.o
+[25/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_audio_formats/juce_audio_formats.cpp.o
+[26/34] Building CXX object bench/CMakeFiles/refractor_bench.dir/bench_main.cpp.o
+[27/34] Building CXX object tests/CMakeFiles/refractor_plugin_tests.dir/home/claude/fc/juce-src/modules/juce_dsp/juce_dsp.cpp.o
+[28/34] Linking CXX shared module Refractor_artefacts/Release/VST3/Refractor.vst3/Contents/x86_64-linux/Refractor.so
+lto-wrapper: warning: using serial compilation of 68 LTRANS jobs
+lto-wrapper: note: see the ‘-flto’ option documentation for more information
+removing moduleinfo.json
+creating /home/claude/build-full/Refractor_artefacts/Release/VST3/Refractor.vst3/Contents/Resources/moduleinfo.json
+[29/34] Linking CXX executable tests/refractor_dsp_tests
+[30/34] Linking CXX executable tests/refractor_rt_tests
+[31/34] Linking CXX executable tests/refractor_plugin_tests
+[32/34] Linking CXX executable bench/refractor_bench
 [33/34] Linking CXX executable Refractor_artefacts/Release/Standalone/Refractor
 lto-wrapper: warning: using serial compilation of 79 LTRANS jobs
 lto-wrapper: note: see the ‘-flto’ option documentation for more information

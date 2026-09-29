@@ -135,3 +135,7 @@ in which case halt and write `BLOCKED.md`.
 ## Immutability
 Frozen files (tests/, bench/, `tests/FROZEN_MANIFEST.sha256` entries) may not be modified, skipped, marked expected-fail
 or weakened. `Calibration.hpp` is not frozen but may change only at G-003 (D-011).
+
+**D-022 Guard tests in red verification.** T-051, T-053 and T-070 are invariant guards that already pass on stubs; they
+were validated by mutation instead of by failing on stubs (research/spikes/S2-env/red-verification.md). Recorded as a
+deviation from 2B.5's "every test fails" wording.

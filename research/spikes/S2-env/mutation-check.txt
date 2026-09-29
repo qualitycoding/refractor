@@ -1,0 +1,6 @@
+src/dsp/Engine.cpp:14: static void _m(){ std::ifstream f("x"); }
+T-051 rc=1
+src/dsp/Params.cpp:7: // Rainbow Machine
+T-053 rc=1
+changed bench/bench_main.cpp
+T-070 rc=1

@@ -60,7 +60,7 @@ TEST_CASE("T-004 tracking to clock scale", "[unit][T-004]") {
 
 // T-005 [unit] Tone mapping: exponential 1 kHz..20 kHz, knob 1 = bypass (+inf). Enforces: C-005, D-007.
 TEST_CASE("T-005 tone to cutoff", "[unit][T-005]") {
-  CHECK_THAT(mapping::toneToCutoffHz(0.0f), WithinRel(calib::kToneMinCutoffHz, 1e-6));
+  CHECK_THAT(mapping::toneToCutoffHz(0.0f), WithinRel(double(calib::kToneMinCutoffHz), 1e-6));
   CHECK(std::isinf(mapping::toneToCutoffHz(1.0f)));
   CHECK_THAT(mapping::toneToCutoffHz(0.5f), WithinRel(std::sqrt(calib::kToneMinCutoffHz * 20000.0), 1e-4));
   CHECK_THAT(mapping::magicToFeedback(1.0f), WithinAbs(calib::kMagicMaxFeedback, 1e-6));
