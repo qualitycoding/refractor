@@ -1,0 +1,20 @@
+Randomness seeded to: 4099396819
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+refractor_rt_tests is a Catch2 v3.16.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+T-022 real-time path does not allocate
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_realtime_alloc.cpp:18
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_realtime_alloc.cpp:18: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+===============================================================================
+test cases: 1 | 1 failed
+assertions: 1 | 1 failed
+

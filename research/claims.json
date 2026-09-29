@@ -1,0 +1,861 @@
+[
+ {
+  "id": "C-001",
+  "claim": "V2 controls: Pitch, Primary, Secondary, Tracking, Tone, Magic knobs; Activate and Magic footswitches; expression jack for Pitch.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.earthquakerdevices.com/rainbow-machine",
+    "doi": "",
+    "title": "Rainbow Machine Polyphonic Pitch Mesmerizer — EarthQuaker Devices (product page, V2 text)",
+    "version": "page fetched 2026-09-28",
+    "locator": "Controls section",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "https://guitarbrothers.com.au/products/earthquaker-devices-rainbow-machine-v2",
+    "doi": "",
+    "title": "Guitar Brothers V2 listing",
+    "version": "",
+    "locator": "Controls",
+    "accessed": "2026-09-28",
+    "tier": 3
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-003",
+   "T-001",
+   "T-030"
+  ]
+ },
+ {
+  "id": "C-002",
+  "claim": "The expression jack controls Pitch; the Pitch knob is defeated when a pedal is inserted.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.earthquakerdevices.com/rainbow-machine",
+    "doi": "",
+    "title": "Rainbow Machine Polyphonic Pitch Mesmerizer — EarthQuaker Devices (product page, V2 text)",
+    "version": "page fetched 2026-09-28",
+    "locator": "Controls section",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "https://guitarbrothers.com.au/products/earthquaker-devices-rainbow-machine-v2",
+    "doi": "",
+    "title": "Guitar Brothers V2 listing",
+    "version": "",
+    "locator": "Controls",
+    "accessed": "2026-09-28",
+    "tier": 3
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-009",
+   "T-017"
+  ]
+ },
+ {
+  "id": "C-003",
+  "claim": "Pitch spans a fourth below to a third above the input continuously; noon is unison.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.earthquakerdevices.com/rainbow-machine",
+    "doi": "",
+    "title": "Rainbow Machine Polyphonic Pitch Mesmerizer — EarthQuaker Devices (product page, V2 text)",
+    "version": "page fetched 2026-09-28",
+    "locator": "Controls section",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "https://coastsonic.com/products/earthquaker-devices-rainbow-machine",
+    "doi": "",
+    "title": "Coast Sonic retail listing (V1-era control text)",
+    "version": "",
+    "locator": "Controls",
+    "accessed": "2026-09-28",
+    "tier": 3
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-004",
+   "T-002",
+   "T-006"
+  ]
+ },
+ {
+  "id": "C-004",
+  "claim": "Primary/Secondary reach unity gain at about 2 o'clock and boost above it.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://coastsonic.com/products/earthquaker-devices-rainbow-machine",
+    "doi": "",
+    "title": "Coast Sonic retail listing (V1-era control text)",
+    "version": "",
+    "locator": "Controls",
+    "accessed": "2026-09-28",
+    "tier": 3
+   },
+   {
+    "url": "https://briansguitars.com/products/earthquaker-devices-rainbow-machine",
+    "doi": "",
+    "title": "Brian's Guitars retail listing (same V1 text)",
+    "version": "",
+    "locator": "Controls",
+    "accessed": "2026-09-28",
+    "tier": 3
+   }
+  ],
+  "confidence": "single-source",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-005",
+   "T-003",
+   "A-014"
+  ]
+ },
+ {
+  "id": "C-005",
+  "claim": "Tone: clockwise bright (full signal), counter-clockwise rolls off treble.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.earthquakerdevices.com/rainbow-machine",
+    "doi": "",
+    "title": "Rainbow Machine Polyphonic Pitch Mesmerizer — EarthQuaker Devices (product page, V2 text)",
+    "version": "page fetched 2026-09-28",
+    "locator": "Controls section",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "https://guitarbrothers.com.au/products/earthquaker-devices-rainbow-machine-v2",
+    "doi": "",
+    "title": "Guitar Brothers V2 listing",
+    "version": "",
+    "locator": "Controls",
+    "accessed": "2026-09-28",
+    "tier": 3
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-007",
+   "T-014"
+  ]
+ },
+ {
+  "id": "C-006",
+  "claim": "Magic is a regeneration control feeding Primary and Secondary back on themselves and each other, producing aliasing, self-oscillation and, at max, distortion; only acts when Primary/Secondary are up.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.earthquakerdevices.com/rainbow-machine",
+    "doi": "",
+    "title": "Rainbow Machine Polyphonic Pitch Mesmerizer — EarthQuaker Devices (product page, V2 text)",
+    "version": "page fetched 2026-09-28",
+    "locator": "Controls section",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "https://guitarbrothers.com.au/products/earthquaker-devices-rainbow-machine-v2",
+    "doi": "",
+    "title": "Guitar Brothers V2 listing",
+    "version": "",
+    "locator": "Controls",
+    "accessed": "2026-09-28",
+    "tier": 3
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-002",
+   "D-008",
+   "T-012",
+   "T-013"
+  ]
+ },
+ {
+  "id": "C-007",
+  "claim": "V2 Secondary adds an octave of the Primary harmony: above when Pitch > noon, below when Pitch < noon, an extra chorus voice at noon.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.earthquakerdevices.com/rainbow-machine",
+    "doi": "",
+    "title": "Rainbow Machine Polyphonic Pitch Mesmerizer — EarthQuaker Devices (product page, V2 text)",
+    "version": "page fetched 2026-09-28",
+    "locator": "Controls section",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "single-source",
+  "evidence_class": "n/a",
+  "contradicted_by": [
+   "V1 retail text (C-004 sources): Secondary knob bipolar, noon silent — V1 only, see A-004"
+  ],
+  "informs": [
+   "D-006",
+   "T-009"
+  ]
+ },
+ {
+  "id": "C-008",
+  "claim": "Activate and Magic footswitches both latch on tap and act momentarily when held.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.earthquakerdevices.com/rainbow-machine",
+    "doi": "",
+    "title": "Rainbow Machine Polyphonic Pitch Mesmerizer — EarthQuaker Devices (product page, V2 text)",
+    "version": "page fetched 2026-09-28",
+    "locator": "Controls section",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "https://chicagomusicexchange.com/products/earthquaker-devices-rainbow-machine-v2-263130",
+    "doi": "",
+    "title": "Chicago Music Exchange V2 listing",
+    "version": "",
+    "locator": "Unique Features",
+    "accessed": "2026-09-28",
+    "tier": 3
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-013",
+   "T-015",
+   "T-036"
+  ]
+ },
+ {
+  "id": "C-009",
+  "claim": "Tracking sets dry–wet lag: clockwise tight tracking/short delay, counter-clockwise longer delay and ambience.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.earthquakerdevices.com/rainbow-machine",
+    "doi": "",
+    "title": "Rainbow Machine Polyphonic Pitch Mesmerizer — EarthQuaker Devices (product page, V2 text)",
+    "version": "page fetched 2026-09-28",
+    "locator": "Controls section",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "https://guitarbrothers.com.au/products/earthquaker-devices-rainbow-machine-v2",
+    "doi": "",
+    "title": "Guitar Brothers V2 listing",
+    "version": "",
+    "locator": "Controls",
+    "accessed": "2026-09-28",
+    "tier": 3
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-010",
+   "T-008"
+  ]
+ },
+ {
+  "id": "C-010",
+  "claim": "In V1 the Tracking pot sets the FV-1 clock via a CD4069 oscillator instead of a crystal; higher resistance → longer delays and glitchier sound.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "http://dirtboxlayouts.blogspot.com/2024/06/earthquaker-devices-rainbow-machine.html",
+    "doi": "",
+    "title": "Dirtbox Layouts: EQD Rainbow Machine (layout + comments by C. Stelloh)",
+    "version": "",
+    "locator": "comments 2024-07-01, 2024-08-08",
+    "accessed": "2026-09-28",
+    "tier": 4
+   }
+  ],
+  "confidence": "single-source",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-010",
+   "R-002"
+  ]
+ },
+ {
+  "id": "C-011",
+  "claim": "With Pitch at noon the pedal acts as a chorus.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.earthquakerdevices.com/rainbow-machine",
+    "doi": "",
+    "title": "Rainbow Machine Polyphonic Pitch Mesmerizer — EarthQuaker Devices (product page, V2 text)",
+    "version": "page fetched 2026-09-28",
+    "locator": "Controls section",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "https://www.rustyscoolguitars.com/pedals/p/earthquaker-devices-rainbow-machine",
+    "doi": "",
+    "title": "Rusty's Cool Guitars listing",
+    "version": "",
+    "locator": "Pro Tip",
+    "accessed": "2026-09-28",
+    "tier": 3
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-012",
+   "T-010"
+  ]
+ },
+ {
+  "id": "C-012",
+  "claim": "V1 is built on the Spin FV-1 DSP.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://reverb.com/news/fv-1-chip-history-5-pedals",
+    "doi": "",
+    "title": "Reverb.com: The Revolutionary Chip Inside Your Favorite New Delay and Reverb Pedals",
+    "version": "2023-12-13",
+    "locator": "body",
+    "accessed": "2026-09-28",
+    "tier": 3
+   },
+   {
+    "url": "http://dirtboxlayouts.blogspot.com/2024/06/earthquaker-devices-rainbow-machine.html",
+    "doi": "",
+    "title": "Dirtbox Layouts: EQD Rainbow Machine (layout + comments by C. Stelloh)",
+    "version": "",
+    "locator": "comments 2024-07-01, 2024-08-08",
+    "accessed": "2026-09-28",
+    "tier": 4
+   },
+   {
+    "url": "https://madbeanpedals.com/forum/index.php?topic=31885.0&wap2=",
+    "doi": "",
+    "title": "madbean forum: 'Couple PedalPCB builds' (Rainbow Puker)",
+    "version": "",
+    "locator": "post by madbean",
+    "accessed": "2026-09-28",
+    "tier": 4
+   }
+  ],
+  "confidence": "inferred",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-010",
+   "R-002"
+  ]
+ },
+ {
+  "id": "C-013",
+  "claim": "V1 runs FV-1 internal ROM programs (no external EEPROM); its sounds come from manipulating and cross-feeding built-in effects.",
+  "kind": "software",
+  "load_bearing": false,
+  "sources": [
+   {
+    "url": "http://dirtboxlayouts.blogspot.com/2024/06/earthquaker-devices-rainbow-machine.html",
+    "doi": "",
+    "title": "Dirtbox Layouts: EQD Rainbow Machine (layout + comments by C. Stelloh)",
+    "version": "",
+    "locator": "comments 2024-07-01, 2024-08-08",
+    "accessed": "2026-09-28",
+    "tier": 4
+   },
+   {
+    "url": "https://madbeanpedals.com/forum/index.php?topic=31885.0&wap2=",
+    "doi": "",
+    "title": "madbean forum: 'Couple PedalPCB builds' (Rainbow Puker)",
+    "version": "",
+    "locator": "post by madbean",
+    "accessed": "2026-09-28",
+    "tier": 4
+   }
+  ],
+  "confidence": "inferred",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-010",
+   "R-002"
+  ]
+ },
+ {
+  "id": "C-014",
+  "claim": "FV-1 ROM program 3 is a pitch shifter with POT0 range ±4 semitones.",
+  "kind": "software",
+  "load_bearing": false,
+  "sources": [
+   {
+    "url": "https://www.experimentalnoize.com/manuals/FV-1.pdf",
+    "doi": "",
+    "title": "Spin Semiconductor FV-1 datasheet (mirror)",
+    "version": "",
+    "locator": "Table 1 ROM Programs",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "https://forum.pedalpcb.com/threads/5th-test-program-on-fv-1-chip-solution-will-this-work.20608/",
+    "doi": "",
+    "title": "PedalPCB forum quoting FV-1 Table 1",
+    "version": "",
+    "locator": "post 1",
+    "accessed": "2026-09-28",
+    "tier": 4
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "A-013"
+  ]
+ },
+ {
+  "id": "C-015",
+  "claim": "Above noon, repeats/trails ascend in pitch as they sustain; below noon they descend.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.earthquakerdevices.com/rainbow-machine",
+    "doi": "",
+    "title": "Rainbow Machine Polyphonic Pitch Mesmerizer — EarthQuaker Devices (product page, V2 text)",
+    "version": "page fetched 2026-09-28",
+    "locator": "Controls section",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "research/spikes/S1-delayline-shifter/output.json",
+    "doi": "",
+    "title": "Spike S1 (this repo)",
+    "version": "",
+    "locator": "output.json",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-008",
+   "T-011"
+  ]
+ },
+ {
+  "id": "C-016",
+  "claim": "V2 differs from V1: twice as loud, extended delay time, deeper chorus, more Magic.",
+  "kind": "software",
+  "load_bearing": false,
+  "sources": [
+   {
+    "url": "https://www.earthquakerdevices.com/rainbow-machine",
+    "doi": "",
+    "title": "Rainbow Machine Polyphonic Pitch Mesmerizer — EarthQuaker Devices (product page, V2 text)",
+    "version": "page fetched 2026-09-28",
+    "locator": "Controls section",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "single-source",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "A-004",
+   "R-001"
+  ]
+ },
+ {
+  "id": "C-017",
+  "claim": "V2 internal architecture (chip/program) is not publicly documented.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [],
+  "confidence": "inferred",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "R-001",
+   "G-003"
+  ]
+ },
+ {
+  "id": "C-020",
+  "claim": "A two-tap triangular-crossfade delay-line shifter at 32768 Hz reproduces requested ratios within 0.61% for −5..+4 st and 1.82% at ±12 st (dominant-peak measure).",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "research/spikes/S1-delayline-shifter/output.json",
+    "doi": "",
+    "title": "Spike S1 (this repo)",
+    "version": "",
+    "locator": "output.json",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-010",
+   "T-006",
+   "T-009"
+  ]
+ },
+ {
+  "id": "C-021",
+  "claim": "Regeneration through that shifter makes the tail's dominant frequency move monotonically in the direction of the shift (up: 488→794→1134 Hz; down: 173→103→49 Hz).",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "research/spikes/S1-delayline-shifter/output.json",
+    "doi": "",
+    "title": "Spike S1 (this repo)",
+    "version": "",
+    "locator": "output.json",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "T-011"
+  ]
+ },
+ {
+  "id": "C-022",
+  "claim": "Wet lag equals window/2 divided by the internal clock (15.69/31.37/62.74 ms at clock 1/0.5/0.25, window 1024).",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "research/spikes/S1-delayline-shifter/output.json",
+    "doi": "",
+    "title": "Spike S1 (this repo)",
+    "version": "",
+    "locator": "output.json",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-010",
+   "T-008",
+   "T-019"
+  ]
+ },
+ {
+  "id": "C-030",
+  "claim": "JUCE 7's juceaide fails to compile against the macOS 15 SDK / Xcode 16 (CGWindowListCreateImage obsoleted); 7.0.12 (June 2024) predates the report and no later 7.x exists.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://github.com/juce-framework/JUCE/issues/1427",
+    "doi": "",
+    "title": "JUCE issue #1427",
+    "version": "",
+    "locator": "issue body",
+    "accessed": "2026-09-28",
+    "tier": 2
+   },
+   {
+    "url": "https://forum.juce.com/t/fyi-juceaide-doesnt-compile-under-xcode-16-macos-sequoia/62836",
+    "doi": "",
+    "title": "JUCE forum FYI thread",
+    "version": "",
+    "locator": "post 1",
+    "accessed": "2026-09-28",
+    "tier": 4
+   },
+   {
+    "url": "https://api.github.com/repos/juce-framework/JUCE/tags",
+    "doi": "",
+    "title": "JUCE tags",
+    "version": "",
+    "locator": "7.0.12 is newest 7.x",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-001"
+  ]
+ },
+ {
+  "id": "C-031",
+  "claim": "JUCE 8.0.15 = commit 91ad83ae34a81e0833b1a2b0866f54846370ae53; modules dual-licensed AGPLv3/commercial.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://raw.githubusercontent.com/juce-framework/JUCE/8.0.15/LICENSE.md",
+    "doi": "",
+    "title": "JUCE LICENSE.md",
+    "version": "8.0.15",
+    "locator": "§1",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "git ls-remote https://github.com/juce-framework/JUCE refs/tags/8.0.15",
+    "doi": "",
+    "title": "git ls-remote",
+    "version": "",
+    "locator": "tag ref",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-001",
+   "ENVIRONMENT"
+  ]
+ },
+ {
+  "id": "C-032",
+  "claim": "JUCE 7 offered a GPLv3 open-source option.",
+  "kind": "software",
+  "load_bearing": false,
+  "sources": [
+   {
+    "url": "https://raw.githubusercontent.com/juce-framework/JUCE/7.0.12/LICENSE.md",
+    "doi": "",
+    "title": "JUCE 7 LICENSE.md",
+    "version": "7.0.12",
+    "locator": "§1",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "single-source",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "A-007"
+  ]
+ },
+ {
+  "id": "C-033",
+  "claim": "GitHub-hosted runner labels: ubuntu-24.04 (x64), macos-15 (arm64), windows-2022 (x64) are GA; macos-14 is deprecated.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://raw.githubusercontent.com/actions/runner-images/main/README.md",
+    "doi": "",
+    "title": "actions/runner-images README",
+    "version": "",
+    "locator": "Available Images table",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "https://api.github.com/repos/actions/runner-images/contents/images/macos",
+    "doi": "",
+    "title": "runner-images tree",
+    "version": "",
+    "locator": "images/macos",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-020",
+   "DR-07"
+  ]
+ },
+ {
+  "id": "C-034",
+  "claim": "JUCE 8 Linux build deps: libasound2-dev, libfreetype-dev, libfontconfig1-dev, X11 dev libs, GL (webkit/curl optional when disabled).",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://raw.githubusercontent.com/juce-framework/JUCE/8.0.15/docs/Linux%20Dependencies.md",
+    "doi": "",
+    "title": "JUCE Linux Dependencies",
+    "version": "8.0.15",
+    "locator": "full command",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "ENVIRONMENT"
+  ]
+ },
+ {
+  "id": "C-035",
+  "claim": "JUCE 8 minimum: C++17, Xcode 12.4, Visual Studio 2019, g++ 7.",
+  "kind": "software",
+  "load_bearing": false,
+  "sources": [
+   {
+    "url": "https://raw.githubusercontent.com/juce-framework/JUCE/8.0.15/README.md",
+    "doi": "",
+    "title": "JUCE README",
+    "version": "8.0.15",
+    "locator": "Minimum System Requirements",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "single-source",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "ENVIRONMENT"
+  ]
+ },
+ {
+  "id": "C-036",
+  "claim": "Catch2 v3.16.0 = commit 317ac1ed4c0bb6e6b91eafc817e05c488feffcb3.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "git ls-remote https://github.com/catchorg/Catch2 refs/tags/v3.16.0^{}",
+    "doi": "",
+    "title": "git ls-remote",
+    "version": "",
+    "locator": "peeled tag",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "ENVIRONMENT",
+   "T-050"
+  ]
+ },
+ {
+  "id": "C-037",
+  "claim": "pluginval v1.0.4 (latest) supports --strictness-level 1-10, --skip-gui-tests, --sample-rates, --block-sizes, --random-seed, --output-dir, --timeout-ms; it has no --validate-in-process flag.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://github.com/Tracktion/pluginval/releases/tag/v1.0.4",
+    "doi": "",
+    "title": "pluginval release",
+    "version": "1.0.4",
+    "locator": "Linux zip sha256 c01c49d8…b55352",
+    "accessed": "2026-09-28",
+    "tier": 1
+   },
+   {
+    "url": "research/spikes/S2-env/pluginval-help.txt",
+    "doi": "",
+    "title": "pluginval --help output (this repo)",
+    "version": "1.0.4",
+    "locator": "options",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "T-040"
+  ]
+ },
+ {
+  "id": "C-038",
+  "claim": "JUCE 8.0.15 + CMake 3.31.10 + Ninja + GCC 13.3 builds the stub VST3/Standalone and test executables on Ubuntu 24.04.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "research/spikes/S2-env/build.log",
+    "doi": "",
+    "title": "Sandbox build log (this repo)",
+    "version": "",
+    "locator": "tail",
+    "accessed": "2026-09-28",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "ENVIRONMENT"
+  ]
+ }
+]

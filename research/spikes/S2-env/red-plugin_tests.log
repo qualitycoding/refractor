@@ -1,0 +1,70 @@
+Randomness seeded to: 3570787765
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+refractor_plugin_tests is a Catch2 v3.16.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+T-033 latency and tail
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/plugin/test_plugin.cpp:67
+...............................................................................
+
+/home/claude/refractor/tests/plugin/test_plugin.cpp:67: FAILED:
+due to unexpected exception with message:
+  RefractorProcessor::RefractorProcessor
+
+-------------------------------------------------------------------------------
+T-030 plugin parameters
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/plugin/test_plugin.cpp:20
+...............................................................................
+
+/home/claude/refractor/tests/plugin/test_plugin.cpp:20: FAILED:
+due to unexpected exception with message:
+  RefractorProcessor::RefractorProcessor
+
+-------------------------------------------------------------------------------
+T-032 state fuzzing
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/plugin/test_plugin.cpp:44
+...............................................................................
+
+/home/claude/refractor/tests/plugin/test_plugin.cpp:44: FAILED:
+due to unexpected exception with message:
+  RefractorProcessor::RefractorProcessor
+
+-------------------------------------------------------------------------------
+T-034 bus layouts
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/plugin/test_plugin.cpp:73
+...............................................................................
+
+/home/claude/refractor/tests/plugin/test_plugin.cpp:73: FAILED:
+due to unexpected exception with message:
+  RefractorProcessor::RefractorProcessor
+
+-------------------------------------------------------------------------------
+T-031 state round trip
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/plugin/test_plugin.cpp:35
+...............................................................................
+
+/home/claude/refractor/tests/plugin/test_plugin.cpp:35: FAILED:
+due to unexpected exception with message:
+  RefractorProcessor::RefractorProcessor
+
+-------------------------------------------------------------------------------
+T-035 processor wraps engine faithfully
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/plugin/test_plugin.cpp:82
+...............................................................................
+
+/home/claude/refractor/tests/plugin/test_plugin.cpp:82: FAILED:
+due to unexpected exception with message:
+  RefractorProcessor::RefractorProcessor
+
+===============================================================================
+test cases: 6 | 6 failed
+assertions: 6 | 6 failed
+

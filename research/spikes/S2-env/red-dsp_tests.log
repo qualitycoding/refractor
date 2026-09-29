@@ -1,0 +1,346 @@
+Randomness seeded to: 1776850089
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+refractor_dsp_tests is a Catch2 v3.16.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+T-015 bypass exactness and click-free toggle
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:142
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:142: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-012 no regeneration when magic off
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:108
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:108: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-016 parameter smoothing
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:158
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:158: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-024 silence flushes to zero
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_operational.cpp:66
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_operational.cpp:66: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-009 secondary voice octave logic
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:61
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:61: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-013 bounded self-oscillation
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:120
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:120: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-004 tracking to clock scale
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:54
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:55: FAILED:
+  CHECK_THAT( mapping::trackingToClockScale(0.0f), WithinRel(calib::kClockScaleMin, 1e-9) )
+due to unexpected exception with message:
+  trackingToClockScale
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:56: FAILED:
+  CHECK_THAT( mapping::trackingToClockScale(1.0f), WithinRel(calib::kClockScaleMax, 1e-9) )
+due to unexpected exception with message:
+  trackingToClockScale
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:57: FAILED:
+  CHECK_THAT( mapping::trackingToClockScale(0.5f), WithinRel(std::sqrt(calib::kClockScaleMin * calib::kClockScaleMax), 1e-6) )
+due to unexpected exception with message:
+  trackingToClockScale
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:57: FAILED:
+  {Unknown expression after the reported line}
+due to unexpected exception with message:
+  trackingToClockScale
+
+-------------------------------------------------------------------------------
+T-011 magic pitch trails direction
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:100
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:100: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-002 pitch mapping
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:31
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:32: FAILED:
+  CHECK_THAT( mapping::pitchKnobToSemitones(0.0f), WithinAbs(calib::kPitchDownSemitones, 1e-6) )
+due to unexpected exception with message:
+  pitchKnobToSemitones
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:33: FAILED:
+  CHECK_THAT( mapping::pitchKnobToSemitones(0.5f), WithinAbs(0.0, 1e-6) )
+due to unexpected exception with message:
+  pitchKnobToSemitones
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:34: FAILED:
+  CHECK_THAT( mapping::pitchKnobToSemitones(1.0f), WithinAbs(calib::kPitchUpSemitones, 1e-6) )
+due to unexpected exception with message:
+  pitchKnobToSemitones
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:35: FAILED:
+  CHECK_THAT( mapping::pitchKnobToSemitones(0.25f), WithinAbs(calib::kPitchDownSemitones * 0.5, 1e-5) )
+due to unexpected exception with message:
+  pitchKnobToSemitones
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:36: FAILED:
+  CHECK_THAT( mapping::pitchKnobToSemitones(-3.0f), WithinAbs(calib::kPitchDownSemitones, 1e-6) )
+due to unexpected exception with message:
+  pitchKnobToSemitones
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:37: FAILED:
+  CHECK_THAT( mapping::pitchKnobToSemitones(7.0f), WithinAbs(calib::kPitchUpSemitones, 1e-6) )
+due to unexpected exception with message:
+  pitchKnobToSemitones
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:38: FAILED:
+  CHECK_THAT( mapping::pitchKnobToSemitones(std::numeric_limits<float>::quiet_NaN()), WithinAbs(0.0, 1e-6) )
+due to unexpected exception with message:
+  pitchKnobToSemitones
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:38: FAILED:
+  {Unknown expression after the reported line}
+due to unexpected exception with message:
+  pitchKnobToSemitones
+
+-------------------------------------------------------------------------------
+T-001 parameter table matches D-003
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:13
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:13: FAILED:
+due to unexpected exception with message:
+  parameterSpecs
+
+-------------------------------------------------------------------------------
+T-020 determinism and reset
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_operational.cpp:34
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_operational.cpp:34: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-019 sample-rate invariance
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:185
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:185: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-036 dual-mode switch latching and momentary
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_dualmode_switch.cpp:8
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_dualmode_switch.cpp:8: FAILED:
+due to unexpected exception with message:
+  DualModeSwitch::DualModeSwitch
+
+-------------------------------------------------------------------------------
+T-006 primary pitch ratio accuracy
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:22
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:22: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-018 channel configurations
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_operational.cpp:15
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_operational.cpp:15: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-014 tone darkens wet
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:134
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:138: FAILED:
+  CHECK( 10.0 * std::log10(hf(1.0f) / hf(0.0f)) >= 10.0 )
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-021 block-size invariance
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_operational.cpp:44
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_operational.cpp:44: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-003 level knob gain law
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:46
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:47: FAILED:
+  CHECK( mapping::levelKnobToGain(0.0f) == 0.0f )
+due to unexpected exception with message:
+  levelKnobToGain
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:48: FAILED:
+  CHECK_THAT( mapping::levelKnobToGain(calib::kUnityKnob), WithinAbs(1.0, 1e-6) )
+due to unexpected exception with message:
+  levelKnobToGain
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:49: FAILED:
+  CHECK_THAT( mapping::levelKnobToGain(1.0f), WithinAbs(1.0 / calib::kUnityKnob, 1e-6) )
+due to unexpected exception with message:
+  levelKnobToGain
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:50: FAILED:
+  CHECK_THAT( mapping::levelKnobToGain(2.0f), WithinAbs(1.0 / calib::kUnityKnob, 1e-6) )
+due to unexpected exception with message:
+  levelKnobToGain
+
+-------------------------------------------------------------------------------
+T-017 expression pedal overrides pitch
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:175
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:180: FAILED:
+  CHECK( std::abs(measure(1.0f) / (440.0 * ratioOf(expectedSemitones(1.0f))) - 1.0) <= kRatioTolPedal )
+due to unexpected exception with message:
+  Engine::Engine
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:181: FAILED:
+  CHECK( std::abs(measure(0.0f) / (440.0 * ratioOf(expectedSemitones(0.0f))) - 1.0) <= kRatioTolPedal )
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-023 non-finite input robustness
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_operational.cpp:55
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_operational.cpp:55: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-005 tone to cutoff
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:62
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:63: FAILED:
+  CHECK_THAT( mapping::toneToCutoffHz(0.0f), WithinRel(calib::kToneMinCutoffHz, 1e-6) )
+due to unexpected exception with message:
+  toneToCutoffHz
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:64: FAILED:
+  CHECK( std::isinf(mapping::toneToCutoffHz(1.0f)) )
+due to unexpected exception with message:
+  toneToCutoffHz
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:65: FAILED:
+  CHECK_THAT( mapping::toneToCutoffHz(0.5f), WithinRel(std::sqrt(calib::kToneMinCutoffHz * 20000.0), 1e-4) )
+due to unexpected exception with message:
+  toneToCutoffHz
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:66: FAILED:
+  CHECK_THAT( mapping::magicToFeedback(1.0f), WithinAbs(calib::kMagicMaxFeedback, 1e-6) )
+due to unexpected exception with message:
+  magicToFeedback
+
+/home/claude/refractor/tests/dsp/test_params_mapping.cpp:67: FAILED:
+  CHECK( mapping::magicToFeedback(0.0f) == 0.0f )
+due to unexpected exception with message:
+  magicToFeedback
+
+-------------------------------------------------------------------------------
+T-010 noon chorus detune
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:76
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:76: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-007 dry identity with wet off
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:33
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:33: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+-------------------------------------------------------------------------------
+T-008 wet lag versus tracking
+-------------------------------------------------------------------------------
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:42
+...............................................................................
+
+/home/claude/refractor/tests/dsp/test_engine_audio.cpp:42: FAILED:
+due to unexpected exception with message:
+  Engine::Engine
+
+===============================================================================
+test cases: 24 | 24 failed
+assertions: 42 | 42 failed
+

@@ -1,0 +1,65 @@
+{
+ "protocol": "planning-protocol-v3.1",
+ "task_id": "refractor-rainbow-machine-vst",
+ "branch": "gen-20260928T151837Z-refractor-rainbow-machine-vst",
+ "repo": "https://github.com/qualitycoding/refractor",
+ "profiles": [
+  "software"
+ ],
+ "software.deploys": false,
+ "phase": "5",
+ "status": "complete",
+ "completed": [
+  "0.1",
+  "0.2",
+  "0.3",
+  "1:R1-R6 (3 rounds)",
+  "2B",
+  "2E",
+  "3",
+  "3.6",
+  "4 (2 rounds)",
+  "5"
+ ],
+ "research_rounds": 3,
+ "premortem_rounds": 2,
+ "environment": {
+  "github_push": true,
+  "subagents": false,
+  "model_tiers_available": [
+   "current model only (Claude Opus 5.5)"
+  ],
+  "sandbox": "Ubuntu 24.04, 1 vCPU, GCC 13.3, Python 3.12.3"
+ },
+ "tier_substitutions": [
+  {
+   "role": "R2 breadth / R4 depth subagents (Sonnet)",
+   "used": "planning model, sequential",
+   "reason": "no subagent spawning"
+  },
+  {
+   "role": "R5 adversarial (fresh-context Opus)",
+   "used": "planning model, role-switched pass",
+   "reason": "no subagent spawning"
+  },
+  {
+   "role": "3.6 mechanical cold read (Haiku)",
+   "used": "plan/tools/lint_plan.py + planning model",
+   "reason": "no subagent spawning"
+  },
+  {
+   "role": "3.6 semantic cold read / Phase 4 lenses (fresh-context Opus)",
+   "used": "planning model, role-switched",
+   "reason": "no subagent spawning"
+  }
+ ],
+ "intake": {
+  "sent": "2026-09-28",
+  "answered": [
+   "push access (PAT)",
+   "repo qualitycoding/refractor"
+  ],
+  "defaulted": "all others"
+ },
+ "updated": "2026-09-29T07:26:53Z"
+}
