@@ -14,7 +14,7 @@ Evidence: `research/spikes/S2-env/`.
 | check_pins (T-050) | fails | `.github/workflows missing (created by S-010)` |
 | check_no_stubs (T-071) | fails | stubs present |
 | perf (T-060/T-061) | fails | bench exits 2, NotImplemented |
-| check_no_io (T-051), check_ip (T-053) | **pass** | Documented exception: these are invariant guards (must hold at every commit); making them fail would require planting violations in `src/`. |
+| check_no_io (T-051), check_ip (T-053) | **pass** | Documented exception D-022: invariant guards; validated by mutation (research/spikes/S2-env/mutation-check.txt). |
 | check_freeze (T-070) | passes after manifest creation | By definition. |
 | T-052 (sanitizers) | configuration of dsp/rt tests | Fails with them (NotImplemented) under ASan+UBSan. |
 No failure is caused by a syntax, import, or missing-file error.

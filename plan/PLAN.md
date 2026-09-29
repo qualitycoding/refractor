@@ -1,7 +1,7 @@
 <!-- STATUS HEADER (Phase 5) -->
 **STATUS: READY FOR IMPLEMENTATION** — generated 2026-09-28 by planning-protocol v3.1.
 Profiles: `software` (deploys=false). Research: 3 rounds (saturated). Pre-mortem: 2 rounds (converged, 0 Critical/High open).
-Freeze: 17 files, red-verified (tests/README_FREEZE.md). Gates: G-003 (listening/IP, required), G-002 (guard only).
+Freeze: 17 files (tests/FROZEN_MANIFEST.sha256), red-verified (research/spikes/S2-env/red-verification.md; guard tests T-051/T-053/T-070 mutation-verified, D-022). Gates: G-003 (listening/IP, required), G-002 (guard only).
 Deviations from intake defaults: D-001 (JUCE 8.0.15 → licence AGPL-3.0-only instead of GPLv3).
 
 # Refractor — implementation plan
