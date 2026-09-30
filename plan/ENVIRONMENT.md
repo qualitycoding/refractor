@@ -43,11 +43,10 @@ ctest --test-dir build -L perf --output-on-failure
 ```
 Sanitizer configuration (T-052):
 ```bash
-cmake -S . -B build-asan -G Ninja -DCMAKE_BUILD_TYPE=Debug -DREFRACTOR_SANITIZE=ON -DREFRACTOR_BUILD_PLUGIN=OFF -DFETCHCONTENT_BASE_DIR=$PWD/.fc
+cmake -S . -B build-asan -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DREFRACTOR_SANITIZE=ON -DREFRACTOR_BUILD_PLUGIN=OFF -DFETCHCONTENT_BASE_DIR=$PWD/.fc
 cmake --build build-asan && ctest --test-dir build-asan -R '^(dsp_tests|rt_tests)$' --output-on-failure
 ```
-Note: ASan replaces operator new; `rt_tests` defines its own global operator new — if ASan reports an ODR/interposition
-conflict, CI runs only `dsp_tests` under sanitizers and logs it in DEVIATIONS.md (R-013).
+Note: `rt_tests` (custom global operator new) was verified to pass under ASan+UBSan (R-013 resolved).
 
 ## §macOS / §Windows setup
 Same cmake/ninja pins via `python3 -m pip install cmake==3.31.10 ninja==1.13.0`. macOS configure adds

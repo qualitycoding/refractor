@@ -17,3 +17,7 @@ a ~20-minute JUCE rebuild on 1 vCPU. No effect on the repository.
 
 ## 2026-09-30 D-D — Phase-vocoder shifter replaces the delay-line shifter (owner decision "1c")
 See plan/amendments/AMENDMENTS.md. Supersedes the original D-010; D-A (area-averaged input) is retained.
+
+## 2026-09-30 D-E — Sanitizer job builds RelWithDebInfo, not Debug
+The FFT-heavy DSP tests are far too slow under Debug + ASan; RelWithDebInfo keeps -O2 and debug info. Verified locally that all
+26 DSP cases and the no-allocation test pass under ASan+UBSan (R-013 resolved).

@@ -10,3 +10,6 @@ S-005 redone 2026-09-30 (PhaseVocoderShifter; S4 sweep 0.00% error)
 S-006 done 2026-09-30 (26/26 dsp cases incl. T-008,T-009,T-015,T-016,T-018,T-025,T-026)
 S-007 done 2026-09-30 (T-011..T-013,T-022..T-024 pass)
 S-008 done 2026-09-30 local: worst case 2.3% (48k/128), frozen bench 0.42%; CI is authoritative
+S-009 done 2026-09-30 (processor, state parsing; T-030..T-035 pass)
+S-011 done 2026-09-30 (editor; pluginval strictness 10 incl. GUI tests passes on Linux under xvfb)
+S-010 pushed 2026-09-30 (ci.yml) — awaiting CI result

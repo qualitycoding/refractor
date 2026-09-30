@@ -1,0 +1,124 @@
+name: ci
+on:
+  push:
+    branches: ['impl/**', main]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    name: build-test (${{ matrix.name }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-24.04, name: linux,   pv: pluginval_Linux.zip,   pvsha: c01c49d8063965c4c2dea8324468336768f5c9139e0b1caebde14c2400b55352}
+          - {os: macos-15,     name: macos,   pv: pluginval_macOS.zip,   pvsha: 3c4c533bda0c5059eea3ddaea752d757ee2025041f0f47e6bcb0e87f6082b29f}
+          - {os: windows-2022, name: windows, pv: pluginval_Windows.zip, pvsha: c08e61ce3b96db41636f8ec7e76f4c7e2c13ebdac7fa1b5a1f52b4f32ec715ab}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Install build tools (pinned)
+        run: python -m pip install cmake==3.31.10 ninja==1.13.0
+      - name: Linux packages
+        if: matrix.name == 'linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2-dev libfreetype-dev libfontconfig1-dev libcurl4-openssl-dev \
+            libx11-dev libxcomposite-dev libxcursor-dev libxext-dev libxinerama-dev libxrandr-dev libxrender-dev \
+            libglu1-mesa-dev mesa-common-dev xvfb
+      - name: Prefer Git bash over WSL bash for ctest scripts (DR-11)
+        if: matrix.name == 'windows'
+        run: echo "C:\\Program Files\\Git\\bin" >> "$GITHUB_PATH"
+      - name: Fetch pluginval 1.0.4 (sha256 verified)
+        run: |
+          curl -fsSL -o pv.zip "https://github.com/Tracktion/pluginval/releases/download/v1.0.4/${{ matrix.pv }}"
+          echo "${{ matrix.pvsha }}  pv.zip" > pv.sha
+          if [ "$RUNNER_OS" = "macOS" ]; then shasum -a 256 -c pv.sha; else sha256sum -c pv.sha; fi
+          python -m zipfile -e pv.zip pvdir
+          case "$RUNNER_OS" in
+            Linux)   PV="$PWD/pvdir/pluginval" ;;
+            macOS)   PV="$PWD/pvdir/pluginval.app/Contents/MacOS/pluginval" ;;
+            Windows) PV="$PWD/pvdir/pluginval.exe" ;;
+          esac
+          chmod +x "$PV" || true
+          echo "PLUGINVAL=$PV" >> "$GITHUB_ENV"
+      - name: Configure
+        run: |
+          case "$RUNNER_OS" in
+            Windows) cmake -S . -B build -G "Visual Studio 17 2022" -A x64 ;;
+            macOS)   cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES=arm64 ;;
+            *)       cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release ;;
+          esac
+      - name: Build
+        run: cmake --build build --config Release -j 4
+      - name: Test (functional, security, integration, pluginval)
+        run: |
+          if [ "$RUNNER_OS" = "Linux" ]; then
+            xvfb-run -a ctest --test-dir build -E '^perf$' --output-on-failure
+          else
+            ctest --test-dir build -C Release -E '^perf$' --output-on-failure
+          fi
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: refractor-${{ matrix.name }}
+          path: |
+            build/Refractor_artefacts/Release/VST3
+            build/Refractor_artefacts/Release/Standalone
+            build/pluginval-logs
+          retention-days: 14
+          if-no-files-found: warn
+
+  sanitizers:
+    name: sanitizers (ASan+UBSan)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - run: python -m pip install cmake==3.31.10 ninja==1.13.0
+      - name: Configure (DSP only)
+        run: cmake -S . -B build-asan -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DREFRACTOR_SANITIZE=ON -DREFRACTOR_BUILD_PLUGIN=OFF
+      - run: cmake --build build-asan -j 4
+      - run: ctest --test-dir build-asan -R '^(dsp_tests|rt_tests)$' --output-on-failure
+
+  perf:
+    name: perf (T-060/T-061)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - run: python -m pip install cmake==3.31.10 ninja==1.13.0
+      - run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DREFRACTOR_BUILD_PLUGIN=OFF
+      - run: cmake --build build -j 4
+      - run: ctest --test-dir build -L perf --output-on-failure
+
+  freeze:
+    name: freeze and policy checks
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - run: |
+          python tests/scripts/check_freeze.py .
+          python tests/scripts/check_pins.py .
+          python tests/scripts/check_no_io.py .
+          python tests/scripts/check_ip.py .

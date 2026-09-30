@@ -1,4 +1,6 @@
 #pragma once
+#include <array>
+#include <atomic>
 #include <juce_audio_processors/juce_audio_processors.h>
 #include "dsp/Engine.hpp"
 // PUBLIC INTERFACE (D-003, D-015). Parameter IDs == refractor::ParamSpec::key. State = APVTS XML (D-016).
@@ -30,6 +32,10 @@ public:
   juce::AudioProcessorParameter* getBypassParameter() const override;    // the "bypass" parameter
   juce::AudioProcessorValueTreeState& state();
 private:
+  void pushParameters();   // audio thread: copy current parameter values into the engine (idempotent)
+  juce::AudioProcessorValueTreeState apvts_;
+  Engine engine_;
+  std::array<std::atomic<float>*, static_cast<std::size_t>(ParamId::Count)> raw_{};
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(RefractorProcessor)
 };
 }
