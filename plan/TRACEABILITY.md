@@ -4,7 +4,7 @@
 | SC | Criterion (measurable) | Evidence | Step(s) |
 |---|---|---|---|
 | SC-1 | VST3 + Standalone build on ubuntu-24.04, macos-15 (arm64), windows-2022; VST3 passes pluginval strictness 10 on each | CI `build-test` jobs; T-040 | S-010, S-011 |
-| SC-2 | Controls behave as published (pitch range, lag vs Tracking, secondary octave logic, trail direction, expression) | T-002, T-006, T-008, T-009, T-011, T-017 | S-003, S-006, S-007 |
+| SC-2 | Controls behave as published (pitch range at ANY input frequency, chord fidelity, lag vs Tracking, secondary octave logic, trail direction, expression) | T-002, T-006, T-008, T-009, T-011, T-017, T-025, T-026 | S-003, S-006, S-007 |
 | SC-3 | Parameter IDs/ranges/defaults and state are stable and round-trip | T-001, T-030, T-031 | S-003, S-009 |
 | SC-4 | Both footswitches latch/momentary; bypass exact and click-free; expression input | T-036, T-015, T-017, T-030 | S-004, S-006, S-011 |
 | SC-5 | Dry path bit-transparent when wet is off | T-007 | S-006 |
@@ -22,14 +22,14 @@
 | T-003 | unit | tests/dsp/test_params_mapping.cpp | SC-2 | C-004, D-005 |
 | T-004 | unit | tests/dsp/test_params_mapping.cpp | SC-2 | C-009, D-010 |
 | T-005 | unit | tests/dsp/test_params_mapping.cpp | SC-2 | C-005, C-006, D-007, D-008 |
-| T-006 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-2 | C-003, C-020 |
+| T-006 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-2 | C-003, C-023 |
 | T-007 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-5 | D-002 |
 | T-008 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-2 | C-009, C-022 |
 | T-009 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-2 | C-007, D-006 |
 | T-010 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-2 | C-011, D-012 |
 | T-011 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-2 | C-015, C-021 |
 | T-012 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-2 | C-006, D-008 |
-| T-013 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-8 | C-006, D-008 |
+| T-013 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-8 | C-006, C-025, D-008 |
 | T-014 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-2 | C-005, D-007 |
 | T-015 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-4 | C-008, D-013 |
 | T-016 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-4 | D-014 |
@@ -41,6 +41,8 @@
 | T-022 | operational/perf | tests/dsp/test_realtime_alloc.cpp | SC-7 | D-014 |
 | T-023 | security/operational | tests/dsp/test_engine_operational.cpp | SC-8 | D-014, D-019 |
 | T-024 | operational | tests/dsp/test_engine_operational.cpp | SC-7 | D-008 |
+| T-025 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-2 | C-003, C-023, D-010 |
+| T-026 | unit (audio) | tests/dsp/test_engine_audio.cpp | SC-2 | C-024, D-010 |
 | T-030 | integration | tests/plugin/test_plugin.cpp | SC-3, SC-4 | D-003, D-015 |
 | T-031 | integration | tests/plugin/test_plugin.cpp | SC-3 | D-016 |
 | T-032 | security | tests/plugin/test_plugin.cpp | SC-8 | D-016, D-019 |

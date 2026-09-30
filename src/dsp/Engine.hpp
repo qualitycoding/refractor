@@ -10,7 +10,7 @@
 //  * numOut==1 with numIn==2: dry = mean of inputs.
 //  * All smoothing is per-sample (output independent of block partitioning, T-021).
 //  * reset() zeroes all state and snaps every smoother to its current target value.
-//  * Shifter phase starts at 0 after reset() (tap 2 at windowSamples/2 carries the signal).
+//  * Wet lag = kWindowSamples / f_int (phase-vocoder latency); reset() zeroes every shifter/filter state.
 namespace refractor {
 class Engine {
 public:

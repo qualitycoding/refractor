@@ -46,23 +46,34 @@ Constants `kPitchDownSemitones`, `kPitchUpSemitones` (A-013). Continuous: "every
 
 **D-006 Secondary voice.** rS = 2·rP when pitch knob > 0.5 + ε, rS = rP/2 when < 0.5 − ε, ε = 0.01. Inside the
 deadband rS = rP and the secondary uses a chorus LFO in quadrature (90°) with the primary's (C-007). Octave switch
-across the deadband is crossfaded over 20 ms to avoid clicks.
+across the deadband is a 20 ms glide of the secondary's octave factor (log2 domain) — DEVIATIONS D-B.
 
 **D-007 Tone.** One-pole low-pass on the wet signal; cutoff exponential from 1 kHz (knob 0) to 20 kHz (knob <1);
 knob == 1 exactly → filter bypassed (C-005). Filter: `y += a·(x − y)`, `a = 1 − exp(−2π·fc/fs_host)`, fc smoothed in the log domain; bypass engages when target is +inf and smoothed fc ≥ 19 900 Hz.
 
 **D-008 Magic.** Feedback gain `g_fb = magic · 1.15` when `magic_on`; ramps to 0 over 10 ms when disengaged.
-Loop soft clip = `tanh`. Values with |x| < 1e-15 in any recursive state are flushed to 0 (T-024).
+Loop soft clip = `tanh`. Values with |x| < 1e-15 in any recursive state are flushed to 0 (T-024). The wet signal is bounded
+by a soft ceiling `kWetCeiling` (4.0, +12 dBFS): linear below half, smooth saturation above, so `|out| <= |dry| + kWetCeiling`
+by construction (the phase vocoder has a crest factor of up to 1.7× the old analytic bound, C-025). The regeneration tap uses the
+un-limited wet.
 
 **D-009 Expression.** When `exp_enabled` ≥ 0.5, `pitch_exp` replaces `pitch` in D-004 (pedal: Pitch knob defeated, C-002).
 
-**D-010 Pitch engine & Tracking.** Two-tap, triangular-crossfade delay-line shifter (spike S1, C-020..C-022) per voice,
-running in a variable-rate internal clock domain: f_int = 32768 Hz × s, s = kClockScaleMin·(1/kClockScaleMin)^tracking
-(exponential; 0.15 → 1.0). Window = 1024 internal samples, so wet lag = 512/f_int (15.6 ms at Tracking=1, 104 ms at 0),
-and bandwidth/aliasing degrade as Tracking falls — the V1 clock-pot mechanism (C-010) and V2's "tighter tracking with
-shorter delay" (C-009). Resampling uses linear interpolation with **no** anti-alias filter by design (C-012/C-013
-"digital remnants"). Rejected alternatives: phase vocoder / Signalsmith-style spectral shifting (too clean, adds latency,
-no natural "tracking lag" control); PSOLA (needs pitch detection, fails on chords — pedal is polyphonic).
+**D-010 Pitch engine & Tracking (REVISED 2026-09-30 — plan/amendments/AMENDMENTS.md).** One STFT **phase-vocoder shifter with
+identity phase locking** per voice (Laroche & Dolson 1999 style; `PhaseVocoderShifter`), running in a variable-rate internal
+clock domain: f_int = 32768 Hz × s, s = kClockScaleMin·(1/kClockScaleMin)^tracking (exponential; 0.15 → 1.0). FFT size
+N = `kWindowSamples` (1024), overlap `kOverlap` (4), Hann analysis/synthesis windows. Per frame: peak-pick (5-bin maxima above
+−60 dB), regions of influence split at spectral valleys, true partial frequency from the peak bin's phase advance, each region
+shifted by the rounded *frequency difference* (ratio 1 is exactly the identity) and rotated so the destination peak's phase
+advances by ω'·hop; partials shifted past Nyquist or below DC alias back into band (intentional, C-013, also keeps Magic
+regeneration alive). Consequences (spike S4): pitch is accurate at any input frequency and for chords (C-023);
+**wet lag = N/f_int** (31 ms at Tracking=1, 208 ms at 0; C-022); analysis bin width = f_int/N so **lag × resolution = 1** —
+tighter Tracking means coarser frequency resolution, so close-spaced chord partials smear at high Tracking (C-024), which is
+the intended "tight tracking vs ambience" trade-off (C-009). Input resampling uses area averaging over one internal tick
+(DEVIATIONS D-A; weak low-pass, aliasing remains), output resampling linear interpolation. `kWindowSamples` (512–4096, power
+of two) is a G-003 calibration constant: 2048 doubles the lag and resolution.
+*History:* the original D-010 (two-tap triangular-crossfade delay-line shifter, lag 512/f_int) was found in S-006 to mistune by
+up to +21 % depending on input frequency (spike S3, research/ERRATA.md E-001) and was replaced at the owner's request.
 
 **D-011 Calibration constants.** All tunable numbers live in `src/dsp/Calibration.hpp` with static_assert bounds.
 They may change only at gate G-003, within bounds. Frozen tests reference them symbolically, so calibration within
@@ -104,7 +115,7 @@ plugin OFF, runs dsp/rt tests), `perf` (ubuntu-24.04, Release, `ctest -L perf`),
 by 40-hex SHA (T-050). Artifacts: VST3 bundle + Standalone per OS, retention 14 days.
 
 **D-021 Profile boundary.** DSP numbers (lags, ratios) are tested as behavioural requirements with tolerances derived
-from spike S1, not published as results; hence no `computational` profile.
+from spikes S1/S4, not published as results; hence no `computational` profile.
 
 ## Interfaces
 Public C++ interfaces are committed as stubs: `src/dsp/{Params,Mapping,PitchShifter,ClockDomain,DualModeSwitch,Engine}.hpp`,
@@ -117,10 +128,10 @@ referenced by tests.
 | ID | If | Then |
 |---|---|---|
 | DR-01 | A dependency fetch fails (network) | Retry 3× with 30 s backoff; then halt with BLOCKED.md (never unpin). |
-| DR-02 | A frozen test fails and the implementation seems right | Re-read D-### and the test's docstring; add diagnostics in a scratch test (not committed to tests/); if the test is provably wrong → TEST_CHALLENGE.md and halt. Never edit frozen files. |
-| DR-03 | Pitch-ratio tests (T-006/T-009/T-017/T-019) fail by < 2× tolerance | Check resampler phase continuity and that the chorus LFO is zero-mean; verify with `research/spikes/S1-delayline-shifter`; do not change tolerances. |
+| DR-02 | A frozen test fails and the implementation seems right | Re-read D-### and the test's docstring; add diagnostics in a scratch test (not committed to tests/); if the test is provably wrong → TEST_CHALLENGE.md and halt. Never edit frozen files without the owner's written approval (precedent: plan/amendments/AMENDMENTS.md). |
+| DR-03 | Pitch-ratio tests (T-006/T-009/T-017/T-019) fail by < 2× tolerance | Check the shifter in isolation with `research/spikes/S4-phase-vocoder/pv_sweep.cpp` (expect <0.01 %) and that the chorus LFO is zero-mean; do not change tolerances. |
 | DR-04 | T-011 trails not monotonic | Check feedback is inside the internal clock domain and taken post-shifter; check `tanh` placement; calibrate only within G-003 bounds is NOT allowed before G-003 — fix the implementation. |
-| DR-05 | Performance T-060/T-061 misses target | Profile with `perf` on Linux; allowed optimisations: SIMD-free loop tightening, precomputed crossfade tables, per-block (not per-sample) coefficient computation **only** if T-021 still passes. If still failing after 2 attempts → halt at G-003 with numbers and a proposal. |
+| DR-05 | Performance T-060/T-061 misses target | Profile with `perf` on Linux; allowed optimisations: SIMD-free loop tightening, reuse of FFT twiddles / per-frame (not per-tick) ratio computation, per-block (not per-sample) coefficient computation **only** if T-021 still passes. If still failing after 2 attempts → halt at G-003 with numbers and a proposal. |
 | DR-06 | pluginval fails at strictness 10 | Read `pluginval-logs`; fix the plugin. If a failure is a pluginval defect (reproducible with JUCE's AudioPluginDemo at the same level) → document in DEVIATIONS.md with evidence and continue; never lower the level. |
 | DR-07 | A CI runner image label is unavailable | Use the nearest newer GA label of the same OS family from actions/runner-images README; log in DEVIATIONS.md. |
 | DR-08 | Security scan / T-032 / T-023 / sanitizer failure | Fix before any other step; these are Critical. |

@@ -18,3 +18,8 @@ Evidence: `research/spikes/S2-env/`.
 | check_freeze (T-070) | passes after manifest creation | By definition. |
 | T-052 (sanitizers) | configuration of dsp/rt tests | Fails with them (NotImplemented) under ASan+UBSan. |
 No failure is caused by a syntax, import, or missing-file error.
+
+## Amendment record
+**2026-09-30 (owner-approved):** `tests/dsp/test_engine_audio.cpp` and `tests/dsp/test_engine_operational.cpp` amended and the
+manifest re-hashed; no other frozen file changed (verified by hash comparison). Changes and rationale: plan/amendments/AMENDMENTS.md
+(TC-1…TC-3 test bugs, TC-4 tolerance, T-008/T-013/T-019 redefined for the phase-vocoder shifter, new T-025 and T-026).

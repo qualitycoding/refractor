@@ -1,0 +1,6 @@
+tracking 1.00 expected   31.25 ms; tone-burst error (ms) at 220/330/440/660/880 Hz:  +0.04  +0.03  +0.03  -0.00  -0.04
+tracking 0.75 expected   50.21 ms; tone-burst error (ms) at 220/330/440/660/880 Hz:  +0.06  +0.04  +0.02  -0.05  -0.14
+tracking 0.50 expected   80.69 ms; tone-burst error (ms) at 220/330/440/660/880 Hz:  +0.09  +0.04  -0.01  -0.18  -0.41
+tracking 0.25 expected  129.65 ms; tone-burst error (ms) at 220/330/440/660/880 Hz:  +0.11  +0.02  -0.12  -0.50  -0.13
+tracking 0.00 expected  208.33 ms; tone-burst error (ms) at 220/330/440/660/880 Hz:  +0.17  -0.01  -0.26  +0.95  +0.98
+worst |error| = 0.98 ms

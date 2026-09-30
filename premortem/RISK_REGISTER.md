@@ -19,3 +19,6 @@
 | R-015 | Windows ctest `bash` resolves to WSL | Medium | Medium | DR-11 PATH fix | Low |
 | R-016 | Frozen-file hashes differ on CRLF checkouts (Windows) | Medium | Medium | `.gitattributes eol=lf` (S-001) + check_freeze.py normalises CRLF | Low |
 | R-017 | Public repo already exposes the plan/code (repository is public) | Low | — | No secrets committed; no binaries released (G-002) | Low |
+| R-018 | Phase-vocoder artefacts: transient smearing, "phasiness"; chord partials smear at high Tracking (lag × resolution = 1, C-024) | Medium | High | Intended lo-fi trade-off; `kWindowSamples` calibratable at G-003 (2048 = cleaner, longer lag); T-026 guards chord fidelity at Tracking 0 | Medium — subjective |
+| R-019 | CPU margin on slow CI runners (worst case 2.3 % of a core here vs 5 % target) | Low | Low | T-060/T-061 bench; DR-05 optimisations (frame-rate ratio computation, shared analysis between voices) | Low |
+| R-020 | Wet ceiling (kWetCeiling 4.0) audibly limits extreme Magic settings | Low | Medium | Linear below 2.0; listen at G-003; constant is calibratable | Low |

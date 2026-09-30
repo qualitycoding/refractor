@@ -532,7 +532,7 @@
  },
  {
   "id": "C-020",
-  "claim": "A two-tap triangular-crossfade delay-line shifter at 32768 Hz reproduces requested ratios within 0.61% for −5..+4 st and 1.82% at ±12 st (dominant-peak measure).",
+  "claim": "[REVISED 2026-09-30, see research/ERRATA.md E-001] A two-tap triangular-crossfade delay-line shifter reproduces the requested ratio within 0.61% for −5..+4 st ONLY for a 440 Hz input; at other input frequencies the error reaches several percent (up to +21 % at 220 Hz, ratio 0.375). Superseded by C-023.",
   "kind": "numerical",
   "load_bearing": true,
   "sources": [
@@ -544,20 +544,27 @@
     "locator": "output.json",
     "accessed": "2026-09-28",
     "tier": 1
+   },
+   {
+    "url": "research/spikes/S3-frequency-dependence/centroid-output.txt",
+    "doi": "",
+    "title": "Spike S3 (this repo)",
+    "version": "",
+    "locator": "centroid-output.txt",
+    "accessed": "2026-09-30",
+    "tier": 1
    }
   ],
-  "confidence": "verified",
+  "confidence": "single-source",
   "evidence_class": "n/a",
   "contradicted_by": [],
   "informs": [
-   "D-010",
-   "T-006",
-   "T-009"
+   "ERRATA E-001"
   ]
  },
  {
   "id": "C-021",
-  "claim": "Regeneration through that shifter makes the tail's dominant frequency move monotonically in the direction of the shift (up: 488→794→1134 Hz; down: 173→103→49 Hz).",
+  "claim": "Regeneration through the original delay-line shifter made trails move monotonically in the direction of the shift (spike S1). With the phase vocoder the same direction property is verified by T-011 on the engine.",
   "kind": "numerical",
   "load_bearing": true,
   "sources": [
@@ -580,17 +587,26 @@
  },
  {
   "id": "C-022",
-  "claim": "Wet lag equals window/2 divided by the internal clock (15.69/31.37/62.74 ms at clock 1/0.5/0.25, window 1024).",
+  "claim": "Wet lag equals the shifter latency divided by the internal clock. Original delay-line (S1): window/2 / f_int. Phase vocoder (S4b, current): N / f_int with N = kWindowSamples, verified exactly (energy centroid = N samples at ratio 1) and on the engine to <0.2 ms for tone bursts.",
   "kind": "numerical",
   "load_bearing": true,
   "sources": [
    {
-    "url": "research/spikes/S1-delayline-shifter/output.json",
+    "url": "research/spikes/S4-phase-vocoder/chord-lag-cpu-output.txt",
     "doi": "",
-    "title": "Spike S1 (this repo)",
+    "title": "Spike S4b (this repo)",
     "version": "",
-    "locator": "output.json",
-    "accessed": "2026-09-28",
+    "locator": "lag rows",
+    "accessed": "2026-09-30",
+    "tier": 1
+   },
+   {
+    "url": "research/spikes/S4-phase-vocoder/lag-tone-output.txt",
+    "doi": "",
+    "title": "Spike S4d (this repo)",
+    "version": "",
+    "locator": "all",
+    "accessed": "2026-09-30",
     "tier": 1
    }
   ],
@@ -856,6 +872,82 @@
   "contradicted_by": [],
   "informs": [
    "ENVIRONMENT"
+  ]
+ },
+ {
+  "id": "C-023",
+  "claim": "An STFT phase-vocoder shifter with identity phase locking (N=1024, overlap 4, f_int=32768 Hz) shifts single sines with <0.01 % pitch error at every tested input frequency (82–1200 Hz) and ratio (0.375–2.52), with rms gain 0.91–1.00 (exactly 1.00 at ratio 1).",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "research/spikes/S4-phase-vocoder/sweep-output.txt",
+    "doi": "",
+    "title": "Spike S4 sweep",
+    "version": "",
+    "locator": "all rows",
+    "accessed": "2026-09-30",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-010",
+   "T-006",
+   "T-009",
+   "T-025"
+  ]
+ },
+ {
+  "id": "C-024",
+  "claim": "Chord partials are preserved when the analysis bin width f_int/N is no larger than about half the partial spacing; lag (N/f_int) times bin width (f_int/N) equals 1, so tighter Tracking (faster clock) gives coarser resolution. At N=1024: G-triad 42 % clean at f_int=32768 Hz, 100 % at ≤16384 Hz; close low power chord needs ≤8 Hz bins.",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "research/spikes/S4-phase-vocoder/chord-resolution-output.txt",
+    "doi": "",
+    "title": "Spike S4c",
+    "version": "",
+    "locator": "all rows",
+    "accessed": "2026-09-30",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-010",
+   "T-026",
+   "G-003"
+  ]
+ },
+ {
+  "id": "C-025",
+  "claim": "With maximum Magic the phase-vocoder loop's output peak reaches up to 1.7× the delay-line analytic bound (crest factor); a soft wet ceiling (transparent below half) makes the bound |dry| + kWetCeiling.",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "research/spikes/S4-phase-vocoder/crest-output.txt",
+    "doi": "",
+    "title": "Spike S4e",
+    "version": "",
+    "locator": "worst-case line",
+    "accessed": "2026-09-30",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-008",
+   "T-013",
+   "R-004"
   ]
  }
 ]

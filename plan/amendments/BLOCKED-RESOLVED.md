@@ -1,3 +1,5 @@
+> **RESOLVED 2026-09-30** — owner chose option C and approved amending the frozen tests. See AMENDMENTS.md.
+
 # BLOCKED — design decision needed (touches research integrity + frozen tests). Halted at S-006/S-007.
 
 ## What happened

@@ -1,0 +1,1 @@
+{"realtime_fraction": 0.023029}

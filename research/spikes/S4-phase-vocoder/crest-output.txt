@@ -1,0 +1,1 @@
+worst peak / analytic-bound = 1.025 (case 2) over 40 runs

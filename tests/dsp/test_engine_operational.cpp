@@ -11,22 +11,22 @@ static void busy(Engine& e) {
   e.setParameter(ParamId::MagicEngaged, 1.0f);
 }
 
-// T-018 [integration] Channel handling per Engine contract. Enforces: SC-6, D-014, D-017.
+// T-018 [integration] Channel handling per Engine contract. AMENDED (TC-3): final block is clamped to the samples that remain. Enforces: SC-6, D-014, D-017.
 TEST_CASE("T-018 channel configurations", "[operational][T-018]") {
   const double fs = 48000; const Vec a = sine(440, fs, 0.5), b = noise(a.size(), 5u);
   { Engine e; e.prepare(fs, 512); busy(e); e.reset(); Vec o0(a.size()), o1(a.size());
     const float* in[2] = { a.data(), b.data() }; float* out[2] = { o0.data(), o1.data() };
-    for (size_t p = 0; p < a.size(); p += 128) { const float* i[2] = { in[0] + p, in[1] + p }; float* o[2] = { out[0] + p, out[1] + p }; e.process(i, o, 2, 2, 128); }
+    for (size_t p = 0; p < a.size(); p += 128) { const float* i[2] = { in[0] + p, in[1] + p }; float* o[2] = { out[0] + p, out[1] + p }; e.process(i, o, 2, 2, int(std::min<size_t>(128, a.size() - p))); }
     CHECK(maxAbsDiff(wetOf(o0, a), wetOf(o1, b)) <= 1e-6f); }
   { Engine e; e.prepare(fs, 512); busy(e); e.reset(); Vec o0(a.size()), o1(a.size());
-    for (size_t p = 0; p < a.size(); p += 128) { const float* i[1] = { a.data() + p }; float* o[2] = { o0.data() + p, o1.data() + p }; e.process(i, o, 1, 2, 128); }
+    for (size_t p = 0; p < a.size(); p += 128) { const float* i[1] = { a.data() + p }; float* o[2] = { o0.data() + p, o1.data() + p }; e.process(i, o, 1, 2, int(std::min<size_t>(128, a.size() - p))); }
     CHECK(maxAbsDiff(o0, o1) == 0.0f); }
   { Engine e; e.prepare(fs, 512); neutral(e); e.reset(); Vec o0(a.size());
-    for (size_t p = 0; p < a.size(); p += 128) { const float* i[2] = { a.data() + p, b.data() + p }; float* o[1] = { o0.data() + p }; e.process(i, o, 2, 1, 128); }
+    for (size_t p = 0; p < a.size(); p += 128) { const float* i[2] = { a.data() + p, b.data() + p }; float* o[1] = { o0.data() + p }; e.process(i, o, 2, 1, int(std::min<size_t>(128, a.size() - p))); }
     Vec mean(a.size()); for (size_t i = 0; i < a.size(); ++i) mean[i] = 0.5f * (a[i] + b[i]);
     CHECK(maxAbsDiff(o0, mean) <= 1e-6f); }
   { Engine e; e.prepare(fs, 512); busy(e); e.reset(); Vec x = noise(a.size(), 11u), ref = x;   // in-place
-    for (size_t p = 0; p < x.size(); p += 128) { float* io[1] = { x.data() + p }; e.process(io, io, 1, 1, 128); }
+    for (size_t p = 0; p < x.size(); p += 128) { float* io[1] = { x.data() + p }; e.process(io, io, 1, 1, int(std::min<size_t>(128, x.size() - p))); }
     Engine r; r.prepare(fs, 512); busy(r); r.reset(); CHECK(maxAbsDiff(x, run(r, ref)) == 0.0f); }
 }
 

@@ -5,3 +5,8 @@ S-005 done 2026-09-30 (shifter, clock domain; see DEVIATIONS D-A)
 S-006 partial 2026-09-30 (engine passes T-006,007,008,010,011,012,013,014,017,019,020,021,023,024; T-009 → BLOCKED.md; T-015/T-016/T-018 → TEST_CHALLENGE.md)
 S-007 done 2026-09-30 (Magic loop: T-011,T-012,T-013,T-022,T-023,T-024 pass)
 HALT 2026-09-30 BLOCKED.md + TEST_CHALLENGE.md
+RESUME 2026-09-30 owner: option C + test amendments approved
+S-005 redone 2026-09-30 (PhaseVocoderShifter; S4 sweep 0.00% error)
+S-006 done 2026-09-30 (26/26 dsp cases incl. T-008,T-009,T-015,T-016,T-018,T-025,T-026)
+S-007 done 2026-09-30 (T-011..T-013,T-022..T-024 pass)
+S-008 done 2026-09-30 local: worst case 2.3% (48k/128), frozen bench 0.42%; CI is authoritative

@@ -15,6 +15,14 @@ constexpr double kOctaveDeadband = 0.01;                 // D-006
 constexpr double kToneBypassHz = 19900.0;                // D-007
 constexpr double kToneInfTargetHz = 24000.0;
 inline float flush(float x) { return std::fabs(x) < calib::kFlushThreshold ? 0.0f : x; }
+// Transparent below kWetCeiling/2; smoothly saturates to +-kWetCeiling (continuous value and slope at the knee).
+inline float softCeiling(float x) {
+  constexpr float T = calib::kWetCeiling, K = 0.5f * T;
+  const float a = std::fabs(x);
+  if (a <= K) return x;
+  const float y = K + K * std::tanh((a - K) / K);
+  return x < 0.0f ? -y : y;
+}
 inline float sane(float x) { return std::isfinite(x) ? x : 0.0f; }
 inline void smooth(double& x, double target, double a) {
   x += a * (target - x);
@@ -35,7 +43,7 @@ struct Engine::Impl {
   bool wasBypassed = false;
   // effect state
   ClockDomain clock;
-  DelayLineShifter shP, shS;
+  PhaseVocoderShifter shP, shS;
   double lfoPhase = 0.0;
   float fbState = 0.0f, toneY = 0.0f;
 
@@ -49,8 +57,8 @@ struct Engine::Impl {
     fbSmoothA = 1.0 - std::exp(-1.0 / (calib::kBypassFadeSeconds / 3.0 * fs));
     bypassStep = 1.0 / std::max(1.0, std::round(calib::kBypassFadeSeconds * fs));
     clock.prepare(fs, 0);
-    shP.prepare(calib::kWindowSamples);
-    shS.prepare(calib::kWindowSamples);
+    shP.prepare(calib::kWindowSamples, calib::kOverlap);
+    shS.prepare(calib::kWindowSamples, calib::kOverlap);
     updateTargets();
     reset();
   }
@@ -93,8 +101,8 @@ struct Engine::Impl {
     const float yP = shP.processSample(u);
     const float yS = shS.processSample(u);
     const float w = flush(static_cast<float>(gP) * yP + static_cast<float>(gS) * yS);
-    fbState = flush(std::tanh(w));
-    return w;
+    fbState = flush(std::tanh(w));          // regeneration uses the un-limited wet
+    return softCeiling(w);                   // output is bounded by kWetCeiling (D-008)
   }
 
   void process(const float* const* in, float* const* out, int numIn, int numOut, int numSamples) {
@@ -162,7 +170,7 @@ void Engine::process(const float* const* in, float* const* out, int numIn, int n
   impl_->process(in, out, numIn, numOut, numSamples);
 }
 double Engine::nominalWetLagSeconds() const {
-  return (calib::kWindowSamples / 2.0) /
+  return static_cast<double>(impl_->shP.latencySamples()) /
          (calib::kNominalClockHz * mapping::trackingToClockScale(static_cast<float>(impl_->tTracking)));
 }
 }  // namespace refractor

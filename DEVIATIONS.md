@@ -14,3 +14,6 @@ when Pitch crosses noon. Reversible; listen at G-003.
 ## 2026-09-30 D-C — Build directories outside the repository
 The planning sandbox reused /home/claude/build-dsp and /home/claude/build-full (FetchContent cache /home/claude/fc) to avoid
 a ~20-minute JUCE rebuild on 1 vCPU. No effect on the repository.
+
+## 2026-09-30 D-D — Phase-vocoder shifter replaces the delay-line shifter (owner decision "1c")
+See plan/amendments/AMENDMENTS.md. Supersedes the original D-010; D-A (area-averaged input) is retained.

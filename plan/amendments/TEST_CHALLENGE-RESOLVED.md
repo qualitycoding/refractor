@@ -1,3 +1,5 @@
+> **RESOLVED 2026-09-30** — owner chose option C and approved amending the frozen tests. See AMENDMENTS.md.
+
 # TEST_CHALLENGE (DR-02) — frozen tests that are wrong. Halted; no frozen file was edited.
 
 All items are my own (planning-phase) errors. Evidence was produced against the real engine; scratch copies with the fixes

@@ -1,8 +1,8 @@
 <!-- STATUS HEADER (Phase 5) -->
-**STATUS: READY FOR IMPLEMENTATION** — generated 2026-09-28 by planning-protocol v3.1.
+**STATUS: IMPLEMENTATION IN PROGRESS (S-001…S-008 done, S-009 next)** — generated 2026-09-28 by planning-protocol v3.1; frozen suite amended 2026-09-30 with owner approval (plan/amendments/AMENDMENTS.md).
 Profiles: `software` (deploys=false). Research: 3 rounds (saturated). Pre-mortem: 2 rounds (converged, 0 Critical/High open).
-Freeze: 17 files (tests/FROZEN_MANIFEST.sha256), red-verified (research/spikes/S2-env/red-verification.md; guard tests T-051/T-053/T-070 mutation-verified, D-022). Gates: G-003 (listening/IP, required), G-002 (guard only).
-Deviations from intake defaults: D-001 (JUCE 8.0.15 → licence AGPL-3.0-only instead of GPLv3).
+Freeze: 17 files (tests/FROZEN_MANIFEST.sha256, re-hashed after the amendments), red-verified (research/spikes/S2-env/red-verification.md; guard tests T-051/T-053/T-070 mutation-verified, D-022). Gates: G-003 (listening/IP, required), G-002 (guard only).
+Deviations from intake defaults: D-001 (JUCE 8.0.15 → licence AGPL-3.0-only instead of GPLv3); D-010 revised (phase-vocoder shifter).
 
 # Refractor — implementation plan
 
@@ -94,18 +94,18 @@ line to `.impl/progress.log`: `S-### done <ISO-8601 UTC> <git sha>` and committi
 - Tier: Opus
 - Profile: software
 - Depends on: S-003
-- Inputs: src/dsp/PitchShifter.*, src/dsp/ClockDomain.*, research/spikes/S1-delayline-shifter/spike.py, D-010
+- Inputs: src/dsp/PitchShifter.*, src/dsp/ClockDomain.*, research/spikes/S4-phase-vocoder/, D-010 (rev. 2)
 - Actions:
-  1. Port `shifter()` from spike S1 to `DelayLineShifter` (buffer = 4×window, power of two; phase in [0,1); taps at `phase·W` and `(phase+0.5 mod 1)·W`; triangular gains; linear interpolated reads; `phase += (1-ratio)/W` wrapped). `prepare` allocates, `reset` zeroes and sets phase 0.
-  2. Implement `ClockDomain` in `ClockDomain.ipp` (replace the stub body): per host sample, advance accumulator by `f_int/hostRate`; for each internal tick due, linearly interpolate the host input at the tick instant, call `fn`, store output; host output = linear interpolation between the last two internal outputs at the host instant. Scale smoothing: one-pole, `kSmoothingSeconds`, per host sample.
-  3. No frozen test targets these classes directly; they are exercised through Engine in S-006. Write scratch checks only under `scratch/` (git-ignored: add `scratch/` to .gitignore).
-- Outputs: src/dsp/PitchShifter.cpp, src/dsp/ClockDomain.cpp, src/dsp/ClockDomain.ipp, .gitignore
-- Evidence produced: none (enables S-006)
-- Done when: `cmake --build build` succeeds and `grep -c NotImplemented src/dsp/PitchShifter.cpp src/dsp/ClockDomain.cpp src/dsp/ClockDomain.ipp` prints 0 for each.
+  1. Implement `PhaseVocoderShifter` per D-010 (FFT size `kWindowSamples`, overlap `kOverlap`; peak picking, valley-split regions, phase-locked region shift by the rounded frequency difference, alias folding, Hann/Hann overlap-add with scale 8/(3·overlap); latency = N). No allocation after `prepare`.
+  2. Implement `ClockDomain` in `ClockDomain.ipp`: per host sample advance the tick accumulator by `f_int/hostRate`; at each tick feed the area-average of the piecewise-linear host signal since the previous tick; host output = causal linear interpolation of the last two internal outputs. Scale smoothing: one-pole, `kSmoothingSeconds`, per host sample.
+  3. Validate in isolation with `research/spikes/S4-phase-vocoder/pv_sweep.cpp` (pitch error < 0.01 %), then through Engine in S-006.
+- Outputs: src/dsp/PitchShifter.{hpp,cpp}, src/dsp/ClockDomain.{cpp,ipp}
+- Evidence produced: spike S4 outputs (C-023, C-024)
+- Done when: `cmake --build build` succeeds; `grep -c NotImplemented` prints 0 for both files; `pv_sweep` worst error < 0.01 %.
 - Checkpoint: `S-005 done`
 - On failure: DR-03.
 - Gate: none
-- Relevant decisions/claims: D-010, C-020, C-022
+- Relevant decisions/claims: D-010, C-022, C-023, C-024
 
 ### S-006 Engine: voices, chorus, tone, bypass, smoothing, channels
 - Tier: Opus
@@ -113,10 +113,10 @@ line to `.impl/progress.log`: `S-### done <ISO-8601 UTC> <git sha>` and committi
 - Depends on: S-004, S-005
 - Inputs: src/dsp/Engine.{hpp,cpp}, D-002, D-004..D-007, D-009, D-012..D-014, D-017
 - Actions:
-  1. Implement `Engine::Impl` per D-002 with Magic feedback gain fixed at 0 for now: two shifters in one ClockDomain callback, chorus LFOs (primary phase 0, secondary +90°), secondary octave logic with 20 ms crossfade, one-pole tone LPF at host rate (bypassed when target cutoff is +inf and smoothed cutoff ≥ 19.9 kHz), bypass crossfade, per-sample one-pole smoothers (kSmoothingSeconds) for pitch semitones, gains, clock scale, cutoff (log domain), magic feedback.
+  1. Implement `Engine::Impl` per D-002 with Magic feedback gain fixed at 0 for now: two phase-vocoder shifters in one ClockDomain callback, chorus LFOs (primary phase 0, secondary +90°), secondary octave logic with 20 ms crossfade, one-pole tone LPF at host rate (bypassed when target cutoff is +inf and smoothed cutoff ≥ 19.9 kHz), bypass crossfade, per-sample one-pole smoothers (kSmoothingSeconds) for pitch semitones, gains, clock scale, cutoff (log domain), magic feedback.
   2. Channel rules from Engine.hpp header; sanitise non-finite input to 0 before any use.
   3. `nominalWetLagSeconds()` = `(kWindowSamples/2) / (kNominalClockHz * trackingToClockScale(targetTracking))`.
-  4. Run `build/tests/refractor_dsp_tests "[T-006],[T-007],[T-008],[T-009],[T-010],[T-014],[T-015],[T-016],[T-017],[T-018],[T-019],[T-020],[T-021]"`.
+  4. Run `build/tests/refractor_dsp_tests "[T-006],[T-007],[T-008],[T-009],[T-010],[T-014],[T-015],[T-016],[T-017],[T-018],[T-019],[T-020],[T-021],[T-025],[T-026]"`.
 - Outputs: src/dsp/Engine.cpp
 - Evidence produced: T-006, T-007, T-008, T-009, T-010, T-014, T-015, T-016, T-017, T-018, T-019, T-020, T-021
 - Done when: all listed tests pass.
@@ -131,7 +131,7 @@ line to `.impl/progress.log`: `S-### done <ISO-8601 UTC> <git sha>` and committi
 - Depends on: S-006
 - Inputs: src/dsp/Engine.cpp, D-008, D-014
 - Actions:
-  1. Enable feedback: `u = x_int + g_fb * tanh(gP*yP + gS*yS)` inside the internal-clock callback, using the previous internal tick's voice outputs; `g_fb` smoothed, 10 ms ramp to 0 on disengage.
+  1. Enable feedback: `u = x_int + g_fb * tanh(gP*yP + gS*yS)` inside the internal-clock callback, using the previous internal tick's voice outputs; `g_fb` smoothed, 10 ms ramp to 0 on disengage; return `softCeiling(w)` (kWetCeiling, D-008) while the loop tap uses the un-limited wet.
   2. Flush |x| < kFlushThreshold to 0 in shifter buffers writes, filter state, smoothers' outputs of zero targets.
   3. Run `build/tests/refractor_dsp_tests` (all) and `build/tests/refractor_rt_tests`.
 - Outputs: src/dsp/Engine.cpp (and shifter if flushing needs it)
@@ -140,7 +140,7 @@ line to `.impl/progress.log`: `S-### done <ISO-8601 UTC> <git sha>` and committi
 - Checkpoint: `S-007 done`
 - On failure: DR-04, DR-08.
 - Gate: none
-- Relevant decisions/claims: D-008, D-014, C-006, C-015, C-021
+- Relevant decisions/claims: D-008, D-014, C-006, C-015, C-021, C-025
 
 ### S-008 Performance
 - Tier: Sonnet
