@@ -15,3 +15,4 @@ S-011 done 2026-09-30 (editor; pluginval strictness 10 incl. GUI tests passes on
 S-010 pushed 2026-09-30 (ci.yml) — awaiting CI result
 S-012 done 2026-09-30 (render_demos, snapshot_editor; editor readout/knob-size defects found in screenshot and fixed)
 S-013 DRAFT 2026-09-30 GATE-G-003.md written; NOT opened: token revoked (401), HEAD not pushed, Windows job of 835a6f3 unseen
+G-003 OPENED 2026-09-30: CI run 36765851852 green on cd87d68 (6/6 jobs); listening set + LISTENING.md delivered to owner; awaiting proceed / calibrate / rescope / stop

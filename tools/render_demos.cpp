@@ -1,10 +1,11 @@
 // Renders the G-003 listening bundle: deterministic synthetic inputs (Karplus-Strong plucks) through the DSP engine with
-// eight presets. Usage: render_demos <output-dir>. Writes <dir>/input/*.wav, <dir>/*.wav (48 kHz, 24-bit mono) and
+// eight presets. Usage: render_demos <output-dir> [trim-dB] (trim is applied to the preset WAVs only, before 24-bit conversion). Writes <dir>/input/*.wav, <dir>/*.wav (48 kHz, 24-bit mono) and
 // <dir>/PRESETS.md. Not part of the plugin; outside src/ so the no-I/O policy (T-051) does not apply.
 #include <algorithm>
 #include <cmath>
 #include <cstdint>
 #include <cstdio>
+#include <cstdlib>
 #include <filesystem>
 #include <fstream>
 #include <string>
@@ -52,6 +53,7 @@ struct Preset { const char* name; const char* input; float pitch, primary, secon
 int main(int argc, char** argv) {
   using refractor::ParamId;
   const std::filesystem::path dir = argc > 1 ? argv[1] : "demo";
+  const float trim = argc > 2 ? static_cast<float>(std::pow(10.0, std::atof(argv[2]) / 20.0)) : 1.0f;
   std::filesystem::create_directories(dir / "input");
   // ---- inputs ----
   Vec phrase(static_cast<size_t>(7.0 * kFs), 0.0f), chord(static_cast<size_t>(5.0 * kFs), 0.0f), bass(static_cast<size_t>(6.0 * kFs), 0.0f), note(static_cast<size_t>(1.5 * kFs), 0.0f);
@@ -92,7 +94,7 @@ int main(int argc, char** argv) {
       const int n = static_cast<int>(std::min<size_t>(256, x.size() - p)); const float* i[1] = {x.data() + p}; float* o[1] = {y.data() + p};
       e.process(i, o, 1, 1, n);
     }
-    writeWav(dir / (std::string(pr.name) + ".wav"), y);
+    { Vec t = y; for (auto& v : t) v *= trim; writeWav(dir / (std::string(pr.name) + ".wav"), t); }
     char row[768];
     std::snprintf(row, sizeof row, "| %s.wav | %s | %.2f (%+.1f st) | %.2f (%.1f dB) | %.2f | %.2f (%.0f ms) | %.2f | %.2f | %s | %.1f dBFS | %s |\n", pr.name, pr.input,
                   pr.pitch, refractor::mapping::pitchKnobToSemitones(pr.pitch), pr.primary, 20.0 * std::log10(refractor::mapping::levelKnobToGain(pr.primary)),

@@ -71,7 +71,7 @@ regeneration alive). Consequences (spike S4): pitch is accurate at any input fre
 tighter Tracking means coarser frequency resolution, so close-spaced chord partials smear at high Tracking (C-024), which is
 the intended "tight tracking vs ambience" trade-off (C-009). Input resampling uses area averaging over one internal tick
 (DEVIATIONS D-A; weak low-pass, aliasing remains), output resampling linear interpolation. `kWindowSamples` (512–4096, power
-of two) is a G-003 calibration constant: 2048 doubles the lag and resolution.
+of two) is a G-003 calibration constant that scales the lag range; chord clarity depends only on lag (lag × bin width = 1), and bandwidth only on Tracking.
 *History:* the original D-010 (two-tap triangular-crossfade delay-line shifter, lag 512/f_int) was found in S-006 to mistune by
 up to +21 % depending on input frequency (spike S3, research/ERRATA.md E-001) and was replaced at the owner's request.
 

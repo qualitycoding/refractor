@@ -22,7 +22,7 @@ It resumes only on a reply containing one of the allowed responses verbatim.
      presets in `demo/PRESETS.md`: noon chorus; slapback (Tracking 0.2); fourth-down harmony; third-up harmony +
      octave; Magic low (repeats); Magic high ascending trails; Magic high descending; max self-oscillation.
      Inputs: `demo/input/*.wav` synthesised by the same tool (plucked-string Karplus-Strong phrase, chord, bass line).
-  3. Current `Calibration.hpp` values and their bounds (notably `kWindowSamples` 1024 → lag 31–208 ms vs chord clarity; 2048 doubles both; `kWetCeiling`).
+  3. Current `Calibration.hpp` values and their bounds (notably `kWindowSamples` 1024 → lag 31–208 ms vs chord clarity; 2048 doubles the lag range; clarity depends only on lag, lag × resolution = 1; `kWetCeiling`).
   4. Screenshot of the editor (`demo/editor.png`) and T-053 output.
 - **Questions for the human:**
   a. Does the character match your expectation of the pedal? For each preset: ok / too clean / too dirty / wrong lag / wrong pitch.
