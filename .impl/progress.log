@@ -13,3 +13,5 @@ S-008 done 2026-09-30 local: worst case 2.3% (48k/128), frozen bench 0.42%; CI i
 S-009 done 2026-09-30 (processor, state parsing; T-030..T-035 pass)
 S-011 done 2026-09-30 (editor; pluginval strictness 10 incl. GUI tests passes on Linux under xvfb)
 S-010 pushed 2026-09-30 (ci.yml) — awaiting CI result
+S-012 done 2026-09-30 (render_demos, snapshot_editor; editor readout/knob-size defects found in screenshot and fixed)
+S-013 DRAFT 2026-09-30 GATE-G-003.md written; NOT opened: token revoked (401), HEAD not pushed, Windows job of 835a6f3 unseen

@@ -1,0 +1,7 @@
+add_executable(render_demos render_demos.cpp)
+target_link_libraries(render_demos PRIVATE refractor_dsp)
+if(REFRACTOR_BUILD_PLUGIN)
+  add_executable(snapshot_editor snapshot_editor.cpp)
+  target_link_libraries(snapshot_editor PRIVATE refractor_plugin_shared juce::juce_recommended_config_flags)
+  target_compile_definitions(snapshot_editor PRIVATE JUCE_STANDALONE_APPLICATION=1)
+endif()

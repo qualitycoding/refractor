@@ -11,14 +11,17 @@ namespace {
 const juce::Colour kBg{0xff12161a}, kPanel{0xff1c232a}, kAccent{0xff3cc7b7}, kWarm{0xffe3a93b}, kText{0xffdbe4ec}, kDim{0xff7b8894};
 double nowSeconds() { return juce::Time::getMillisecondCounterHiRes() * 0.001; }
 
-juce::String pitchText(double v) { return juce::String(mapping::pitchKnobToSemitones(static_cast<float>(v)), 1) + " st"; }
+juce::String pitchText(double v) {
+  const double st = std::round(static_cast<double>(mapping::pitchKnobToSemitones(static_cast<float>(v))) * 10.0) / 10.0;
+  return juce::String(st == 0.0 ? 0.0 : st, 1) + " st";   // never prints "-0.0"
+}
 juce::String levelText(double v) {
   const float g = mapping::levelKnobToGain(static_cast<float>(v));
   return g <= 1.0e-4f ? juce::String("off") : juce::String(20.0 * std::log10(static_cast<double>(g)), 1) + " dB";
 }
 juce::String lagText(double v) {
   const double fInt = calib::kNominalClockHz * mapping::trackingToClockScale(static_cast<float>(v));
-  return juce::String(1000.0 * calib::kWindowSamples / fInt, 0) + " ms";
+  return juce::String(juce::roundToInt(1000.0 * calib::kWindowSamples / fInt)) + " ms";
 }
 juce::String toneText(double v) {
   const float hz = mapping::toneToCutoffHz(static_cast<float>(v));
@@ -59,20 +62,22 @@ struct RefractorEditor::Foot : public juce::Component {
 void RefractorEditor::addKnob(Knob& k, const char* key, const char* caption) {
   auto& s = k.slider;
   s.setSliderStyle(juce::Slider::RotaryHorizontalVerticalDrag);
-  s.setTextBoxStyle(juce::Slider::TextBoxBelow, false, 70, 18);
+  s.setTextBoxStyle(juce::Slider::TextBoxBelow, false, 84, 16);
   s.setColour(juce::Slider::rotarySliderFillColourId, kAccent);
   s.setColour(juce::Slider::thumbColourId, kWarm);
   s.setColour(juce::Slider::textBoxTextColourId, kText);
   s.setColour(juce::Slider::textBoxOutlineColourId, juce::Colours::transparentBlack);
+  addAndMakeVisible(s);
+  k.attachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(
+      static_cast<RefractorProcessor&>(processor).state(), key, s);
+  // The attachment installs its own text conversion, so ours must be set afterwards.
   const juce::String k_(key);
   if (k_ == "pitch" || k_ == "pitch_exp") s.textFromValueFunction = pitchText;
   else if (k_ == "primary" || k_ == "secondary") s.textFromValueFunction = levelText;
   else if (k_ == "tracking") s.textFromValueFunction = lagText;
   else if (k_ == "tone") s.textFromValueFunction = toneText;
   else s.textFromValueFunction = magicText;
-  addAndMakeVisible(s);
-  k.attachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(
-      static_cast<RefractorProcessor&>(processor).state(), key, s);
+  s.updateText();
   k.label.setText(caption, juce::dontSendNotification);
   k.label.setJustificationType(juce::Justification::centred);
   k.label.setColour(juce::Label::textColourId, kText);
@@ -111,12 +116,12 @@ void RefractorEditor::paint(juce::Graphics& g) {
 }
 
 void RefractorEditor::resized() {
-  auto r = getLocalBounds().reduced(getWidth() / 28);
-  r.removeFromTop(static_cast<int>(getHeight() * 0.13f));
-  auto feet = r.removeFromBottom(static_cast<int>(getHeight() * 0.30f));
+  auto r = getLocalBounds().reduced(getWidth() / 40);
+  r.removeFromTop(static_cast<int>(getHeight() * 0.09f));
+  auto feet = r.removeFromBottom(static_cast<int>(getHeight() * 0.25f));
   const int colW = r.getWidth() / 4;
   auto place = [&](Knob& k, juce::Rectangle<int> cell) {
-    k.label.setBounds(cell.removeFromTop(static_cast<int>(getHeight() * 0.06f)));
+    k.label.setBounds(cell.removeFromTop(static_cast<int>(getHeight() * 0.05f)));
     k.slider.setBounds(cell);
   };
   auto row1 = r.removeFromTop(r.getHeight() / 2), row2 = r;

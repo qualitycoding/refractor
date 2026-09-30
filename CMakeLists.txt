@@ -9,6 +9,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 option(REFRACTOR_BUILD_PLUGIN "Build the JUCE VST3/Standalone plugin" ON)
 option(REFRACTOR_BUILD_TESTS  "Build test executables" ON)
+option(REFRACTOR_BUILD_TOOLS  "Build demo renderer and editor snapshot tools" OFF)
 option(REFRACTOR_SANITIZE     "Build with ASan+UBSan (Linux/macOS, Debug)" OFF)
 
 if(REFRACTOR_SANITIZE AND NOT MSVC)
@@ -65,4 +66,8 @@ if(REFRACTOR_BUILD_TESTS)
   enable_testing()
   add_subdirectory(tests)
   add_subdirectory(bench)
+endif()
+
+if(REFRACTOR_BUILD_TOOLS)
+  add_subdirectory(tools)
 endif()
