@@ -1,0 +1,8 @@
+knob 0.00 want 164.8 got 159.3 err -3.35%  ratioVoice=0.375
+knob 0.10 want 174.6 got 169.2 err -3.08%  ratioVoice=0.397
+knob 0.25 want 190.4 got 185.3 err -2.70%  ratioVoice=0.433
+knob 0.40 want 207.7 got 202.8 err -2.35%  ratioVoice=0.472
+knob 0.60 want 921.6 got 926.9 err +0.57%  ratioVoice=2.095
+knob 0.75 want 987.8 got 993.9 err +0.63%  ratioVoice=2.245
+knob 0.90 want 1058.7 got 1065.8 err +0.68%  ratioVoice=2.406
+knob 1.00 want 1108.7 got 1116.6 err +0.71%  ratioVoice=2.520

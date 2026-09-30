@@ -12,6 +12,7 @@ public:
 private:
   std::vector<float> buffer_;
   int window_ = 0, write_ = 0;
+  unsigned mask_ = 0;
   double phase_ = 0.0;
   float ratio_ = 1.0f;
 };

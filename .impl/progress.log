@@ -1,1 +1,7 @@
 S-001 done 2026-09-29T07:36:54Z pending
+S-003 done 2026-09-30 (T-001..T-005 pass)
+S-004 done 2026-09-30 (T-036 passes)
+S-005 done 2026-09-30 (shifter, clock domain; see DEVIATIONS D-A)
+S-006 partial 2026-09-30 (engine passes T-006,007,008,010,011,012,013,014,017,019,020,021,023,024; T-009 → BLOCKED.md; T-015/T-016/T-018 → TEST_CHALLENGE.md)
+S-007 done 2026-09-30 (Magic loop: T-011,T-012,T-013,T-022,T-023,T-024 pass)
+HALT 2026-09-30 BLOCKED.md + TEST_CHALLENGE.md
