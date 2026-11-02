@@ -41,6 +41,6 @@ checks that the frozen tests are unchanged.
 
 ## Licence
 
-AGPL-3.0-only (JUCE 8 open-source option). See `LICENSE` on the implementation branch.
+Source code: Apache License 2.0 (see [LICENSE](LICENSE)). The plugin links JUCE, which is dual-licensed (AGPLv3 or a commercial JUCE licence), so plugin binaries you build and distribute are subject to the JUCE licence you build under, in practice AGPLv3 unless you hold a commercial licence. The implementation branch carries an AGPL-3.0 `LICENSE` instead, which needs reconciling before a merge.
 
 The plan and the code were produced with AI assistance (Claude).
