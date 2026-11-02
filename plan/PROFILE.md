@@ -21,3 +21,7 @@ results (`computational` off, see D-021); no manuscript or archive deposit (`pub
 - Rule 7 evidence classes; Rule 8 result-agnostic planning (fidelity uncertainty is instead handled by calibration constants + gate G-003)
 - Gate G-001 (math/computational only)
 - Phase 4 lenses: mathematical, numerical, novelty, publication; deployment-test and operational-fork categories that require `software.deploys`
+
+## v3.9 addendum profile confirmation
+
+Active profiles unchanged; `software` active. Target protocol v3.9.

@@ -1,5 +1,7 @@
 # HANDOFF — Refractor implementation
 
+
+Reading order: `HANDOFF.md` → `ADDENDUM-PLAN-V3.9.md` → `plan/PLAN.md`. Later protocol amendments take precedence only where the gap ledger says so.
 **Purpose.** Implement *Refractor*, a VST3 + Standalone audio plugin (JUCE 8.0.15, C++20) that reproduces the published
 behaviour of a V2 polyphonic pitch-warping guitar pedal (FV-1-era design), so that the frozen test suite passes on
 Linux, macOS and Windows CI and the owner signs off by ear at gate G-003. Name, UI and metadata must not reference the

@@ -34,3 +34,11 @@ It resumes only on a reply containing one of the allowed responses verbatim.
   - `proceed-with-rescope: <text>` → log text in DEVIATIONS.md, apply only if it does not touch frozen tests/interfaces; else halt BLOCKED.md.
   - `stop` → halt; leave branch as is.
 - **Limit:** after 3 `calibrate` rounds without `proceed`, the implementer writes BLOCKED.md summarising the feedback (fidelity may need reference captures, R-001).
+
+## G-003 — split learning stores (v3.9)
+
+Lessons and knowledge are pushed to **separate** stores: the `Lessons`
+repository and the `knowledge` repository. G-003 requests the destinations at
+plan close; **do-not-push** either store until human sign-off; the documented
+bundle fallback applies when sign-off is withheld. Store publication never
+holds up the repository amendment's completion record.

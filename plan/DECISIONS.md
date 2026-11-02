@@ -139,3 +139,29 @@ or weakened. `Calibration.hpp` is not frozen but may change only at G-003 (D-011
 **D-022 Guard tests in red verification.** T-051, T-053 and T-070 are invariant guards that already pass on stubs; they
 were validated by mutation instead of by failing on stubs (research/spikes/S2-env/red-verification.md). Recorded as a
 deviation from 2B.5's "every test fails" wording.
+
+## Addendum v3.9 decisions (2026-11-02)
+
+- **D-900** — Planning-only amendment. Product scope, public interfaces,
+  expected test behaviour, performance targets and human gates do not change,
+  except the mandatory split G-003 lesson/knowledge store semantics.
+- **D-901** — Source-branch drift: the planning source branch tip `eda8f7920a60`
+  is the rollout phase's `plan: add protocol v3.9 addendum` commit, a direct
+  child of the audited source commit `17f474850deb`. The implementation
+  branch descends from `eda8f7920a60`, which descends from the audited commit;
+  no newer planning was overwritten or rebased away.
+- **D-902** — No platform expansion: no new OS/architecture/runtime support is
+  claimed; CI coverage is recorded as plan-level jobs/waivers only.
+- **D-903** — No release, deployment or package publication is authorised or
+  planned by this amendment.
+- **D-904** — Ambiguities resolved from existing plan artifacts and repository
+  evidence only; defaults follow the addendum's no-added-platform / explicit
+  waiver rule.
+- **D-905** — Local build and test execution is not available in the ephemeral
+  sandbox; the CI matrix jobs are the authoritative execution venue (honest
+  substitution; see DEVIATIONS.md).
+- **D-906** — Fresh-context independent review is unavailable in this
+  environment; the cold read is recorded as a substitution with High risk
+  (S-ADD-090), not claimed as an independent pass.
+- **D-980** — Mutation testing design: see `reviews/MUTATION.md` (priced
+  three-tier trigger strategy, one aggregator job, report-based score gate).
