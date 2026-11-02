@@ -61,3 +61,4 @@
 | T-071 | completeness | tests/scripts/check_no_stubs.py | all | D-### interfaces |
 
 Deployment-test category: N/A (`software.deploys=false`).
+| LISTEN-G-003 | Blind listening gate: rendering-regression | `listening/G-003/round-001/result.json`, `GATE-G-003.LISTENING.md` | S-LISTEN, G-003 |

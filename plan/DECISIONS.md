@@ -150,3 +150,7 @@ or weakened. `Calibration.hpp` is not frozen but may change only at G-003 (D-011
 **D-022 Guard tests in red verification.** T-051, T-053 and T-070 are invariant guards that already pass on stubs; they
 were validated by mutation instead of by failing on stubs (research/spikes/S2-env/red-verification.md). Recorded as a
 deviation from 2B.5's "every test fails" wording.
+
+**D-023 Blind listening amendment for G-003 — recorded 2026-11-02T14:15:19Z
+
+Decision: integrate the cross-repository blind-listening protocol into the existing branch and gate without creating a replacement implementation line. Freeze 12 onset pairs, initial seed `20261106`, RMS −23 dBFS, 1.0 s clips, 10 ms fades, 44.1 kHz PCM-24 WAV, pass at ≤8/12, maximum three rounds, and mandatory demos. Evidence is `rendering-regression`; No pedal-authenticity claim is created; a pass means only no detectable baseline regression. The current state is `blocked` until the prerequisites in `plan/LISTENING-AMENDMENT.md` are complete.

@@ -34,3 +34,12 @@ It resumes only on a reply containing one of the allowed responses verbatim.
   - `proceed-with-rescope: <text>` → log text in DEVIATIONS.md, apply only if it does not touch frozen tests/interfaces; else halt BLOCKED.md.
   - `stop` → halt; leave branch as is.
 - **Limit:** after 3 `calibrate` rounds without `proceed`, the implementer writes BLOCKED.md summarising the feedback (fidelity may need reference captures, R-001).
+
+## G-003 — blind listening gate `rendering-regression`
+
+- **Trigger step:** S-LISTEN after applicable implementation/review prerequisites and before downstream packaging/retrospective work.
+- **Evidence bundle:** `GATE-G-003.LISTENING.md` and `listening/G-003/round-001/` containing the machine-readable `result.json`, ordered locked answers, exact score and one-sided binomial p-value, side-bias count, verbatim findings, reference/candidate provenance and checksums, pair-builder settings, render manifest, demo definitions, and `SHA256SUMS`.
+- **Frozen primary condition:** 12 matched onset pairs, initial seed `20261106`, common RMS −23 dBFS, 1.0 s clips, 10 ms fades, 44.1 kHz PCM-24 WAV, pass at ≤8/12 with no unresolved qualitative finding. Maximum three total rounds; rounds 2 and 3 use the initial seed +1000/+2000.
+- **Questions for the human:** ordered A/B reference choices for all 12 pairs, then the repository-specific demo/weak-spot questions in `plan/LISTENING-AMENDMENT.md`.
+- **Allowed responses:** `proceed`, `calibrate`, `iterate: <notes>`, `proceed-with-rescope: <text>`, `stop`.
+- **Plan branches:** see `plan/LISTENING-AMENDMENT.md`; downstream resume is `S-014`. `stop` and `blocked` leave this gate open with the reason and next prerequisite recorded.
